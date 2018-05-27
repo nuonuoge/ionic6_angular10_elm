@@ -85,7 +85,8 @@ export class FoodPage extends Tabs implements OnInit {
     });
   }
 
-  getShopList() {
+  getShopList(loaderMore?: boolean) {
+    this.showLoading = true;
     this.dataService.getShopList(this.latitude,
       this.longitude,
       this.offset,
@@ -97,7 +98,11 @@ export class FoodPage extends Tabs implements OnInit {
         if (res.length < 20) {
           this.touchend = true;
         }
-        this.shopList = [...this.shopList, ...res];
+        if (loaderMore) {
+          this.shopList = [...this.shopList, ...res];
+        } else {
+          this.shopList = [...res];
+        }
         this.showLoading = false;
       });
   }
@@ -208,7 +213,7 @@ export class FoodPage extends Tabs implements OnInit {
       if (scrollContent.scrollTop + scrollContent.clientHeight >= scrollContent.scrollHeight) {
         this.offset += 20;
         this.showLoading = true;
-        this.getShopList();
+        this.getShopList(true);
       }
     });
   }
