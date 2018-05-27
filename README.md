@@ -40,9 +40,8 @@ ionic serve
 
 # 部分截图
 
-<img src="https://github.com/nuonuoge/ionic3_angular5_elm/tree/master/screenshots/show1.gif" width="320" height="568"/>
-
-<img src="https://github.com/nuonuoge/ionic3_angular5_elm/tree/master/screenshots/show2.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic3_angular5_elm/blob/master/screenshots/show1.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic3_angular5_elm/blob/master/screenshots/show2.gif" width="320" height="568"/>
 
 # 目标功能
 - [x] 定位功能 -- 完成
