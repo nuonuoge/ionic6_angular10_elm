@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>密码登录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input type="text" placeholder="账号" [(ngModel)]="userName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" placeholder="密码" [(ngModel)]="userPwd" *ngIf="!showPwd"></ion-input>
+    <ion-input type="text" placeholder="密码" [(ngModel)]="userPwd" *ngIf="showPwd"></ion-input>
+    <ion-toggle [(ngModel)]="showPwd"></ion-toggle>
+  </ion-item>
+  <div class="item item-block item-ios item-md item-input">
+    <ion-input type="text" placeholder="验证码" [(ngModel)]="codeNumber" maxLength="4"></ion-input>
+    <div class="img_change_img">
+      <img [hidden]="!captchaCodeImg" [src]="captchaCodeImg">
+      <div class="change_img" (click)="getCaptchaCode()">
+        <p>看不清</p>
+        <p>换一张</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button_login">
+    <button ion-button block color="secondary" class="button-lg" (click)="logIn()">
+      登录
+    </button>
+  </div>
+</ion-content>

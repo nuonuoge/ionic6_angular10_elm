@@ -1,0 +1,75 @@
+page-search {
+  .item-block {
+    min-height: 2.5rem;
+    padding: .85rem 1.28rem;
+  }
+  .item-inner {
+    border: none !important;
+    padding: 0 !important;
+  }
+  ion-input {
+    .text-input-ios, .text-input-md {
+      margin: 0;
+    }
+    .text-input {
+      font-size: 1.08rem;
+      border: 1px solid #e4e4e4;
+      padding: 0 .6rem;
+      height: 2.21rem;
+      width: 100%;
+      border-radius: .21rem;
+    }
+  }
+  .button-ios, .button-md {
+    background-color: $blue;
+  }
+  .button_submit {
+    width: 100%;
+    padding: 0 1.28rem .669rem 1.28rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .title_restaurant{
+      font-size: 1rem;
+      line-height: 3.3rem;
+      text-indent: 0.835rem;
+      font-weight: bold;
+      color: #666;
+  }
+  .list_container{
+      background-color: #fff;
+  }
+  .search_history{
+    .history_list{
+      background-color: #fff;
+      border-bottom: 0.041rem solid $bc;
+      @include font(1.16rem, 3.34rem);
+      padding: 0 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .history_text{
+        display: inline-block;
+        width: 80%;
+      }
+      .delete_icon{
+        @include wh(1.67rem, 1.67rem);
+      }
+    }
+    .clear_history{
+      background-color: #fff;
+      color: $blue;
+      @include font(1.169rem, 3.34rem);
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .search_none{
+    margin: 0 auto;
+    @include font(1.1rem, 2.9rem);
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 0.21rem;
+  }
+}

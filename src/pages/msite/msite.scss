@@ -1,0 +1,64 @@
+page-msite {
+	.scroll-content{
+      margin-bottom: 4rem !important;
+    }
+  .msite_nav{
+		background-color: #fff;
+		border-bottom: .041rem solid $bc;
+		height: 15.6rem;
+		.swiper-container{
+			@include wh(100%, auto);
+			position: relative;
+			padding-bottom: 1rem;
+			.swiper-pagination{
+				position: absolute;
+				bottom: .33rem;
+        width: 100%;
+			}
+		}
+		.fl_back{
+			@include wh(100%, 100%);
+		}
+	}
+	.food_types_container{
+		display:flex;
+		flex-wrap: wrap;
+		.link_to_food{
+			width: 25%;
+			padding: .5rem 0rem;
+			@include ifj(center);
+			figure{
+				img{
+					margin-bottom: .83rem;
+					@include wh(3rem, 3rem);
+				}
+				figcaption{
+					text-align: center;
+					@include sc(.37rem, #666);
+				}
+			}
+		}
+	}
+	.shop_list_container{
+		margin-top: .668rem;
+		border-top: .041rem solid $bc;
+		background-color: #fff;
+		.shop_header{
+			.shop_icon{
+				fill: #999;
+				margin-left: 1rem;
+				vertical-align: middle;
+				@include wh(1rem, 1rem);
+			}
+			.shop_header_title{
+				color: #999;
+				@include font(.92rem, 2.7rem);
+			}
+		}
+	}
+	.empty_data{
+		@include sc(0.835rem, #666);
+		text-align: center;
+		line-height: 3.34rem;
+	}
+}

@@ -1,0 +1,23 @@
+<section class="cart_module">
+  <section *ngIf="!foods.specifications.length" class="cart_button">
+    <span (click)="removeOutCart(foods.category_id, foods.item_id, foods.specfoods[0].food_id, foods.specfoods[0].name, foods.specfoods[0].price, '', foods.specfoods[0].packing_fee, foods.specfoods[0].sku_id, foods.specfoods[0].stock)"
+      *ngIf="foodNum()">
+        <svg>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-minus"></use>
+        </svg>
+      </span>
+    <span class="cart_num" *ngIf="foodNum()">{{foodNum()}}</span>
+    <svg class="add_icon" (click)="addToCart(foods.category_id, foods.item_id, foods.specfoods[0].food_id, foods.specfoods[0].name, foods.specfoods[0].price, '', foods.specfoods[0].packing_fee, foods.specfoods[0].sku_id, foods.specfoods[0].stock, $event)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-add"></use>
+    </svg>
+  </section>
+  <section *ngIf="foods.specifications.length" class="choose_specification">
+    <section class="choose_icon_container">
+      <svg class="specs_reduce_icon" *ngIf="foodNum()" (click)="showReduceTip()">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-minus"></use>
+      </svg>
+      <span class="cart_num" *ngIf="foodNum()">{{foodNum()}}</span>
+      <span class="show_chooselist" (click)="showChooseList(foods)">选规格</span>
+    </section>
+  </section>
+</section>

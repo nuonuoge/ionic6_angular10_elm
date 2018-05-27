@@ -1,0 +1,14 @@
+<div class="rating_container">
+  <section class="star_container">
+    <svg class="grey_fill" *ngFor="let num of [1, 2, 3, 4, 5]">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use>
+    </svg>
+  </section>
+  <div [ngStyle]="{'width': rating*3/5 + 'rem'}" class="star_overflow">
+    <section class="star_container">
+      <svg class="orange_fill" *ngFor="let num of [1, 2, 3, 4, 5]">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use>
+      </svg>
+    </section>
+  </div>
+</div>

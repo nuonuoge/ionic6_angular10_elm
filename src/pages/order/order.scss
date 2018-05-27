@@ -1,0 +1,19 @@
+page-order {
+  .order_empty {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .order_empty_icon {
+      background-repeat: no-repeat;
+      height: 6rem;
+      width: 6rem;
+    }
+    .order_empty_text {
+      font-size: 1rem;
+      color: #999;
+      margin-top: .5rem;
+    }
+  }
+}

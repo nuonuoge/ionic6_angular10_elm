@@ -1,0 +1,6 @@
+<ion-tabs [ngClass]="{'hide-tabs':hideTabs}" [selectedIndex]="selectedIndex">
+  <ion-tab [root]="tabMsiteRoot" [rootParams]="geohashParams" tabTitle="外卖" tabIcon="elm"></ion-tab>
+  <ion-tab [root]="tabSearchRoot" [rootParams]="geohashParams" tabTitle="搜索" tabIcon="find"></ion-tab>
+  <ion-tab [root]="tabOrderRoot" tabTitle="订单" tabIcon="order"></ion-tab>
+  <ion-tab [root]="tabProfileRoot" tabTitle="我的" tabIcon="mine"></ion-tab>
+</ion-tabs>

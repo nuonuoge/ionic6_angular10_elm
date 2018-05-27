@@ -1,0 +1,55 @@
+.cart_module{
+        .add_icon{
+            position: relative;
+            //  z-index: 999;
+        }
+        .cart_button{
+            display: flex;
+            align-items: center;
+        }
+        svg{
+            @include wh(1.5rem, 1.5rem);
+            fill: #3190e8;
+        }
+        .cart_num{
+            @include sc(1.1rem, #666);
+            min-width: 1rem;
+            text-align: center;
+            font-family: Helvetica Neue,Tahoma;
+            margin-right: .2rem;
+        }
+        .choose_specification{
+            .choose_icon_container{
+                display: flex;
+                align-items: center;
+                .show_chooselist{
+                    display: block;
+                    @include sc(.92rem, #fff);
+                    padding: .16rem .33rem;
+                    background-color: $blue;
+                    border-radius: 0.33rem;
+                    border: 1px solid $blue;
+                }
+            }
+        }
+    }
+    .showReduce-enter-active, .showReduce-leave-active {
+        transition: all .3s ease-out;
+    }
+    .showReduce-enter, .showReduce-leave-active {
+        opacity: 0;
+        transform: translateX(1rem);
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: all .3s;
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0;
+    }
+    .fadeBounce-enter-active, .fadeBounce-leave-active {
+        transition: all .3s;
+    }
+    .fadeBounce-enter, .fadeBounce-leave-active {
+        opacity: 0;
+        transform: scale(.7);
+    }

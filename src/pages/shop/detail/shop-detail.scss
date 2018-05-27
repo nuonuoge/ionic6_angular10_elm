@@ -1,0 +1,161 @@
+page-shop-detail {
+  .description_top{
+    padding: .8rem 0.6rem;
+    background-color: #fff;
+    .description_header{
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        .description_left{
+            margin-right: 0.6rem;
+            img{
+                @include wh(4.6rem, 4.6rem);
+                display: block;
+                border-radius: 0.15rem;
+            }
+        }
+        .description_right{
+            flex: 1;
+            .description_title{
+                @include sc(1rem, #000);
+                font-weight: bold;
+                width: 100%;
+                margin-bottom: 0.3rem;
+            }
+            .description_text{
+                @include sc(.5rem, #fff);
+                margin-bottom: .9rem;
+                display: flex;
+                .rating_num {
+                  margin-left:.2rem;
+                  margin-right: .5rem;
+                  font-size: 0.62rem;
+                  color: #f60;
+                }
+                .order_num {
+                  font-size: 0.62rem;
+                  color:#8e8e8e;
+                }
+            }
+            .description_fee_distance{
+                @include sc(.5rem, #fff);
+                width: 100%;
+                display: flex;
+                .fee {
+                  flex: 1;
+                }
+                .delivery_mode {
+                    color: #fff;
+                    padding: 0 .2rem;
+                    border-radius: .2rem;
+                }
+            }
+        }
+    }
+    .description_info {
+      background-color: #f5f5f5;
+      margin-top: 0.6rem;
+      .float_delivery_fee {
+        font-size: 0.6rem;
+        padding: 0.6rem;
+      }
+      .promotion_info {
+        font-size: 0.6rem;
+        padding: 0.6rem;
+      }
+    }
+  }
+  
+  .description_rating {
+    margin-top: 0.6rem;
+    .rating_header {
+      font-size: .9rem;
+      padding: 0.6rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      .score {
+        color: #f60;
+      }
+    }
+    .rating_lastest {
+      background-color: #fff;
+      display: flex;
+      padding: .6rem;
+      border-bottom: 1px solid #ddd;
+      .user_avatar{
+        @include wh(1.5rem, 1.5rem);
+        border: 0.025rem;
+        border-radius: 50%;
+        margin-right: .8rem;
+      }
+      .username_star{
+        flex: 1;
+        @include sc(.55rem, #666);
+        .username{
+            color: #666;
+            margin-bottom: .2rem;
+        }
+        .star_desc{
+            display: flex;
+            align-items: center;
+        }
+      }
+      .rated_at{
+          @include sc(.67rem, #999);
+      }
+    }
+    .view_more {
+      font-size: 1rem;
+      color: #8e8e8e;
+      background-color: #fff;
+      padding: .6rem;
+      text-align: center;
+      .view_arrow{
+        font-size: 1.2rem;
+        color: #8e8e8e;
+        margin-left: .2rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  .description_activities_supports {
+    margin-top: .6rem;
+    padding:0 .6rem;
+    background-color: #fff;
+    .activities_supports_header {
+      font-size: 1rem;
+      color: #000;
+      padding: .6rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .activities_li, .supports_li {
+      font-size: .6rem;
+      color:#8e8e8e;
+      line-height: 2.5rem;
+    }
+    .activities_icon, .supports_icon {
+      color: #fff;
+      padding: 0 .2rem;
+    }
+  }
+  .description_shop_info {
+    margin-top: .6rem;
+    padding: 0 .6rem;
+    background-color: #fff;
+    .shop_info_header {
+      font-size: 1rem;
+      color: #000;
+      padding: .6rem 0;
+    }
+    .elm, .address, .shop_info_header {
+      border-bottom: 1px solid #ddd;
+    }
+    .elm, .address, .time {
+      padding:.6rem 0;
+      font-size: .6rem;
+    }
+  }
+  
+}

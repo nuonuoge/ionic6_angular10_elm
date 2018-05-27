@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-icon name="search" (click)="toSearch()"></ion-icon>
+    <ion-title>{{addressTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content (ionScroll)="loaderMore($event)">
+  <nav class="msite_nav">
+    <div class="swiper-container" *ngIf="foodTypes?.length">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide food_types_container">
+          <ion-slides (ionSlideDidChange)="slideChanged($event)" loop="true">
+            <ion-slide *ngFor="let foodType of foodTypes">
+              <a class="link_to_food" *ngFor="let foodItem of foodType" [navPush]="'FoodPage'"
+              [navParams]="{geohash:geohash,title:foodItem.title,restaurant_category_id:getCategoryId(foodItem.link)}">
+                <figure>
+                  <img [src]="imgBaseUrl + foodItem.image_url">
+                  <figcaption>{{foodItem?.title}}</figcaption>
+                </figure>
+              </a>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+      <div class="swiper-pagination">
+        <span class="swiper-pagination-bullet" [ngClass]="{'swiper-pagination-bullet-active': slideActive}"></span>
+        <span class="swiper-pagination-bullet" [ngClass]="{'swiper-pagination-bullet-active': !slideActive}"></span>
+      </div>
+    </div>
+    <img src="./assets/imgs/fl.svg" *ngIf="!foodTypes?.length" class="fl_back animation_opactiy">
+  </nav>
+  <div class="shop_list_container">
+    <header class="shop_header">
+      <svg class="shop_icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shop"></use>
+      </svg>
+      <span class="shop_header_title">附近商家</span>
+    </header>
+    <shop-list *ngIf="hasGetData" [type]="'msite'" [shopList]="shopList" [geohash]="geohash"></shop-list>
+    <p *ngIf="touchend" class="empty_data">没有更多了</p>
+    <loading [hidden]="!showLoading"></loading>
+  </div>
+</ion-content>

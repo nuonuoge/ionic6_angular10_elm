@@ -1,0 +1,51 @@
+@import 'src/style/mixin';
+shop-search {
+  .list_li{
+      display: flex;
+      justify-content: 'center';
+      padding: 0.835rem;
+      border-bottom: 0.041rem solid $bc;
+      .shop_left{
+          margin-right: 0.41rem;
+          .restaurant_img{
+              @include wh(2.839rem, 2.839rem);
+          }
+      }
+      .shop_right{
+          font-size: 0.92rem;
+          flex: 1;
+          .shop_right_text{
+              padding-bottom: 0.41rem;
+              border-bottom: 0.041rem solid $bc;
+              p{
+                  line-height: 1.502rem;
+              }
+              .pay_icon{
+                  margin-bottom: -0.13rem;
+              }
+          }
+          .shop_right_detail{
+              margin-top: 0.41rem;
+              li{
+                  font-size: 0;
+                  span{
+                      font-size: .835rem;
+                      vertical-align: middle;
+                      display: inline-block;
+                      margin-bottom: 0.134rem;
+                  }
+                  .activity_icon{
+                      @include sc(.835rem, #fff);
+                      font-weight: bold;
+                      padding: .067rem;
+                      border-radius: 0.25rem;
+                      margin-right: 0.21rem;
+                  }
+                  .only_phone{
+                      color: #FF6000;
+                  }
+              }
+          }
+      }
+  }
+}
