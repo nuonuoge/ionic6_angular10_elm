@@ -39,7 +39,7 @@ export class DataService {
     //  HttpParams是一个不可变对象，每次set都会返回一个新的对象，所以需要链式调用
     let params = new HttpParams()
       .set('type', 'search')
-      .set('cityId', cityId)
+      .set('city_id', cityId)
       .set('keyword', keyword);
     return this.http.get('/v1/pois', { params: params });
   }
