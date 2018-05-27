@@ -1,4 +1,5 @@
 # Auto detect text files and perform LF normalization
 *.ts linguist-language=angular
+*.js linguist-language=angular 
 *.html linguist-language=angular
-*.scss linguist-language=angular  
+*.scss linguist-language=angular 
