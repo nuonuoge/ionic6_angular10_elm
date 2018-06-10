@@ -1,6 +1,6 @@
-# ionic3_angular5_elm
-基于ionic3 + ng5 构建一个具有 45 个页面的大型单页面应用
-借鉴了[@bailicangdu](https://github.com/bailicangdu/vue2-elm) vue-elm项目，已征得其本人同意，后台使用[@bailicangdu](https://github.com/bailicangdu/node-elm)大大开源的项目
+# ionic4_angular5_elm
+基于ionic4 + ng5 构建一个具有 45 个页面的大型单页面应用
+借鉴了[@bailicangdu](https://github.com/bailicangdu/vue2-elm) vue-elm项目，已征得其本人同意，[后台传送地址](https://github.com/bailicangdu/node-elm)
 
 
 
@@ -11,9 +11,9 @@
 ```
 npm install -g cordova ionic // 需要全局安装cordova ionic
 
-git clone https://github.com/nuonuoge/ionic3_angular5_elm.git  
+git clone https://github.com/nuonuoge/ionic4_angular5_elm.git  
 
-cd ionic3_angular5_elm
+cd ionic4_angular5_elm
 
 npm install
 
@@ -42,8 +42,8 @@ ionic serve
 
 # 部分截图
 
-<img src="https://github.com/nuonuoge/ionic3_angular5_elm/blob/master/screenshots/show1.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic3_angular5_elm/blob/master/screenshots/show2.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/show1.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/show2.gif" width="320" height="568"/>
 
 # 目标功能
 - [x] 定位功能 -- 完成
