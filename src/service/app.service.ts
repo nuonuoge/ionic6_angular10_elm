@@ -8,4 +8,9 @@ export class AppService {
   searchAddress: any;
   choosedAddress: {address: string, index: number} = {address: '', index: 0};
   confirmRemark: {remarkText: string, inputText: string} = {remarkText: '', inputText: ''};
+
+  getTabPagesIndex(pageName) {
+    let tabPagesIndex: any = {'MsitePage': 0, 'SearchPage': 1, 'OrderPage': 2, 'ProfilePage': 3};
+    return tabPagesIndex[pageName];
+  }
 }

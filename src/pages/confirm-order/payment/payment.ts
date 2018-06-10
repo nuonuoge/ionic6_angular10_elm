@@ -49,7 +49,7 @@ export class PaymentPage extends Tabs implements OnInit {
         {
           text: '确认',
           handler: () => {
-            this.navCtrl.push('OrderPage');
+            this.navCtrl.parent.select(this.appService.getTabPagesIndex('OrderPage'));
           }
         }
       ]
@@ -64,8 +64,6 @@ export class PaymentPage extends Tabs implements OnInit {
       this.countNum--;
       if (this.countNum === 0) {
         clearInterval(this.timer);
-        this.showAlert = true;
-        this.alertText = '支付超时';
       }
     }, 1000);
   }

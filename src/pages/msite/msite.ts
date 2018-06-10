@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DataService } from '../../service';
+import { AppService, DataService } from '../../service';
 import { Content } from 'ionic-angular';
 
 @IonicPage()
@@ -30,6 +30,7 @@ export class MsitePage implements OnInit {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
+    public appService: AppService,
     public dataService: DataService,
     public zone: NgZone,
     public elementRef: ElementRef) {
@@ -97,7 +98,7 @@ export class MsitePage implements OnInit {
   }
 
   toSearch() {
-    this.navCtrl.parent.select(1);
+    this.navCtrl.parent.select(this.appService.getTabPagesIndex('SearchPage'));
   }
 
   loaderMore(event: any) {

@@ -134,7 +134,7 @@ export class ConfirmOrderPage extends Tabs implements OnInit {
     // 用户未登录时弹出提示框
     let userId = this.localStorageService.getStore('userId');
     if (!userId) {
-      this.toastTip('请登录');
+      this.navCtrl.push('LoginPage');
       return;
       // 未选择地址则提示
     } else if (!this.choosedAddress()) {
