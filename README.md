@@ -9,6 +9,8 @@
 #### 注意：由于涉及大量的 ES6/7 等新属性，node 需要 6.0 以上版本 
 
 ```
+npm install -g cordova ionic // 需要全局安装cordova ionic
+
 git clone https://github.com/nuonuoge/ionic3_angular5_elm.git  
 
 cd ionic3_angular5_elm
