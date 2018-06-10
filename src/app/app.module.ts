@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ComponentsModule } from '../components';
-import { DataService, LocalStorageService, TabsService, CartService, ShopService } from '../service';
+import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -30,6 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppService,
     DataService,
     LocalStorageService,
     TabsService,

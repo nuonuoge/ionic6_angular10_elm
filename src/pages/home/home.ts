@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { DataService } from '../../service';
+import { DataService, LocalStorageService } from '../../service';
 
 @IonicPage()
 @Component({
@@ -12,7 +12,10 @@ export class HomePage implements OnInit {
   guessCityId: string;
   hotCities: any[];
   groupCities: any;
-  constructor(public navCtrl: NavController, public dataService: DataService) {
+  userId: string;
+  constructor(public navCtrl: NavController, public dataService: DataService,
+    public localStorageService: LocalStorageService) {
+    this.userId = this.localStorageService.getStore('userId');
     this.guessCity = '';
     this.hotCities = [];
   }

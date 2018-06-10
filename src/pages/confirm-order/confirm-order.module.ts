@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { OrderPage } from './order';
+import { ConfirmOrderPage } from './confirm-order';
 import { ComponentsModule } from '../../components';
-import { TimeLastPipe } from './time-last.pipe';
 
 @NgModule({
   declarations: [
-    OrderPage,
-    TimeLastPipe
+    ConfirmOrderPage,
   ],
   imports: [
     ComponentsModule,
-    IonicPageModule.forChild(OrderPage)
+    IonicPageModule.forChild(ConfirmOrderPage)
   ]
 })
-export class OrderPageModule {}
+export class ConfirmOrderPageModule {}

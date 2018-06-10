@@ -64,7 +64,7 @@ export class LoginPage implements OnInit {
         this.getCaptchaCode();
         this.toastTip(res.message);
       } else {
-        this.storageService.setStore('user_id', res.user_id);
+        this.storageService.setStore('userId', res.user_id);
         this.navCtrl.pop();
       }
     });

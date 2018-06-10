@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>订单备注</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="rating_page">
+    <section *ngIf="!showLoading">
+      <section class="quick_remark" *ngIf="remarkList.remarks.length">
+        <header class="header_style">快速备注</header>
+        <ul class="remark_arr_list_ul">
+          <li class="remark_arr_list_li" *ngFor="let item of remarkList.remarks;index as index">
+            <span *ngFor="let remarkTtem of item;index as remarkIndex" [ngClass]="{'first': remarkIndex == 0, 'last': remarkIndex == item.length - 1, choosed: remarkText[index]&&(remarkText[index][0] == remarkIndex)}"
+              class="remark_item_li" (click)="chooseRemark(index, remarkIndex, remarkTtem)">{{remarkTtem}}</span>
+          </li>
+        </ul>
+      </section>
+      <section class="input_remark quick_remark">
+        <header class="header_style">其他备注</header>
+        <textarea class="input_text" [(ngModel)]="inputText" placeholder="填写额外对餐厅和骑手小哥备注的信息"></textarea>
+      </section>
+      <div class="determine" (click)="confirmRemark()">确定</div>
+    </section>
+    <loading *ngIf="showLoading"></loading>
+  </div>
+</ion-content>

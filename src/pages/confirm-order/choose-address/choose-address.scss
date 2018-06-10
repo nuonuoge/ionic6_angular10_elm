@@ -1,0 +1,95 @@
+page-choose-address {
+  .rating_page{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      z-index: 202;
+      padding-top: 3.3rem;
+      p, span{
+          font-family: Helvetica Neue,Tahoma,Arial;
+      }
+  }
+  .scroll_container{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-top: 3.3rem;
+      overflow-y: auto;
+  }
+  .list_cotainer{
+      padding-bottom: 8.3rem;
+  }
+  .add_icon_footer{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4.1rem;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 204;
+      span{
+          @include sc(1.16rem, $blue);
+          margin-left: .5rem;
+      }
+  }
+  .deliverable_address{
+      background-color: #fff;
+      li{
+          display: flex;
+          align-items: center;
+          border-bottom: 0.041rem solid #f5f5f5;
+          padding: 1.16rem;
+          line-height: 1.67rem;
+          .choosed_address{
+              @include wh(1.33rem, 1.33rem);
+              fill: #4cd964;
+              margin-right: .67rem;
+              opacity: 0;
+          }
+          .default_address{
+              opacity: 1;
+          }
+          header{
+              @include sc(1.16rem, #333);
+              span:nth-of-type(1){
+                  font-size: 1.33rem;
+                  font-weight: bold;
+              }
+          }
+          .address_detail{
+              width: 100%;
+              display: flex;
+              align-items: center;
+              span{
+                font-size: .83rem;
+                line-height: 1.1rem;
+                padding: .15rem;
+                margin-right: .5rem;
+                border: 0.05rem solid;
+              }
+              p{
+                  @include sc(1rem, #777);
+              }
+          }
+      }
+  }
+  #out_delivery{
+      .out_header{
+          @include sc(1rem, #666);
+          line-height: 2.5rem;
+          padding-left: .83rem;
+          background-color: #f5f5f5;
+      }
+      *{
+          color: #ccc;
+      }
+  }
+}

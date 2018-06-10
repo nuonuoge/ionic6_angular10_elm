@@ -162,6 +162,9 @@ ion-spinner {
   .tab-button {
     font-size: .8rem;
     min-height: 4rem;
+    .tab-button-icon {
+      transform: translate3d(0, 0, 0);
+    }
   }
   .tab-button[aria-selected=true] .tab-button-icon {
     color: #2395ff;
@@ -169,4 +172,4 @@ ion-spinner {
   .tab-button[aria-selected=true] .tab-button-icon + span{
     color: #2395ff;
   }
-} 
+}

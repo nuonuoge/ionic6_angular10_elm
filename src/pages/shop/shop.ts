@@ -10,6 +10,7 @@ import {
 } from '@angular/animations';
 import { DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../service';
 import { Tabs } from '../../class/tabs';
+import { ImgBaseUrl } from '../../environments/env';
 
 @IonicPage()
 @Component({
@@ -59,7 +60,7 @@ export class ShopPage extends Tabs implements OnInit {
   elLeft: number = 0; // 当前点击加按钮在网页中的绝对top值
   elBottom: number = 0; // 当前点击加按钮在网页中的绝对left值
   ratingScroll: any; // 评论页Scroll
-  imgBaseUrl: string = 'http://cangdu.org:8001/img/';
+  imgBaseUrl: string = ImgBaseUrl;
   promotionInfo: string;
   shopCart: any;
   cartState: any = 'inactive';
@@ -298,6 +299,17 @@ export class ShopPage extends Tabs implements OnInit {
         this.receiveInCart = false;
         this.showMoveDot = this.showMoveDot.map(item => false);
       });
+    }
+  }
+  toConfirmOrder() {
+    let userId = this.localStorageService.getStore('userId');
+    if (userId) {
+      this.navCtrl.push('ConfirmOrderPage', {
+        geohash: this.geohash,
+        shopId: this.shopId
+      });
+    } else {
+      this.navCtrl.push('LoginPage');
     }
   }
 }

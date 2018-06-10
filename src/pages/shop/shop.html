@@ -106,7 +106,7 @@
           </section>
           <section class="gotopay" [ngClass]="{'gotopay_acitvity': minimumOrderAmount() <= 0}">
             <span class="gotopay_button_style" *ngIf="minimumOrderAmount() > 0">还差¥{{minimumOrderAmount()}}起送</span>
-            <div class="gotopay_button_style" *ngIf="minimumOrderAmount() <= 0">去结算</div>
+            <div class="gotopay_button_style" *ngIf="minimumOrderAmount() <= 0" (click)="toConfirmOrder()">去结算</div>
           </section>
         </section>
         <div>

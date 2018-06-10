@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { ShopService, TabsService } from '../../../service';
 import { Tabs } from '../../../class/tabs';
+import { ImgBaseUrl } from '../../../environments/env';
 
 @IonicPage()
 @Component({
@@ -12,7 +13,7 @@ export class ShopDetailPage extends Tabs {
   shopDetailData: any;
   ratingScoresData: any;
   rating: any;
-  imgBaseUrl: string = 'http://cangdu.org:8001/img/';
+  imgBaseUrl: string = ImgBaseUrl;
   ratingParams: any;
   constructor(public navCtrl: NavController, public shopService: ShopService, public tabsService: TabsService) {
     super(tabsService);

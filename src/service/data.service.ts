@@ -136,7 +136,7 @@ export class DataService {
   getFoodMenu(restaurantId): any {
     let params = new HttpParams()
       .set('restaurant_id', restaurantId);
-    return this.http.get('/shopping/v2/menu', {params: params});
+    return this.http.get('/shopping/v2/menu', { params: params });
   }
 
   /* 获取商铺评价列表 */
@@ -158,4 +158,76 @@ export class DataService {
   ratingTags(shopId: string): any {
     return this.http.get('/ugc/v2/restaurants/' + shopId + '/ratings/tags');
   }
+
+  /*  获取快速备注列表 */
+  getRemark(id: string, sig: string): any {
+    let params = new HttpParams()
+      .set('sig', sig);
+    return this.http.get('/v1/carts/' + id + '/remarks', { params: params });
+  }
+
+  /* 个人中心里编辑地址 */
+  getAddressList(userId: string): any {
+    return this.http.get('/v1/users/' + userId + '/addresses');
+  }
+
+  /* 添加地址 */
+  postAddAddress(userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag, tag_type): any {
+    let body = {
+      address,
+      address_detail,
+      geohash,
+      name,
+      phone,
+      phone_bk,
+      poi_type,
+      sex,
+      tag,
+      tag_type,
+    };
+    return this.http.post('/v1/users/' + userId + '/addresses', body);
+  }
+
+  /* 搜索地址 */
+  searchNearby(keyword: string): any {
+    let params = new HttpParams()
+      .set('type', 'nearby')
+      .set('keyword', keyword);
+    return this.http.get('/v1/pois', { params: params });
+  }
+
+  /* 确认订单 */
+  checkout(geohash, entities, shopId): any {
+    let body = { 'come_from': 'web', 'geohash': geohash, 'entities': entities, 'restaurant_id': shopId };
+    return this.http.post('/v1/carts/checkout', body);
+  }
+
+  /* 下订单 */
+  placeOrders(userId, cartId, addressId, description, entities, geohash, sig): any {
+    let body = {
+      address_id: addressId,
+      come_from: 'mobile_web',
+      deliver_time: '',
+      description,
+      entities,
+      geohash,
+      paymethod_id: 1,
+      sig,
+    };
+    return this.http.post('/v1/users/' + userId + '/carts/' + cartId + '/orders', body);
+  }
+
+  /* 获取订单列表 */
+  getOrderList(userId, offset): any {
+    let params = new HttpParams()
+      .set('limit', '10')
+      .set('offset', offset);
+    return this.http.get('/bos/v2/users/' + userId + '/orders', { params: params });
+  }
+  /* 获取订单详情 */
+  getOrderDetail(userId, orderId): any {
+    return this.http.get('/bos/v1/users/' + userId + '/orders/' + orderId + '/snapshot');
+  }
+
 }
+
