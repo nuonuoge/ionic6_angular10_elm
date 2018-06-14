@@ -1,12 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-icon name="arrow-back" (click)="back()"></ion-icon>
-    <ion-title>订单详情</ion-title>
+    <ion-title>订单</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content (ionScroll)="loaderMore($event)">
-  <div *ngIf="!showLoading || orderList.length > 0" class="order_page">
+  <ng-container *ngIf="!showLoading || orderList.length > 0">
     <div class="order_empty" *ngIf="orderList.length == 0">
       <img class="order_empty" src="../../assets/imgs/order.png" class="order_empty_icon">
       <p class="order_empty_text">您最近没有订单</p>
@@ -46,7 +46,7 @@
         </section>
       </li>
     </ul>
-  </div>
+  </ng-container>
   <loading *ngIf="showLoading"></loading>
   <p *ngIf="touchEnd" class="empty_data">没有更多了</p>
 </ion-content>

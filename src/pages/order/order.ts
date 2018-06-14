@@ -1,33 +1,37 @@
-import { Component, OnInit, NgZone, ElementRef } from '@angular/core';
+import { Component, OnInit, NgZone, ElementRef, OnDestroy } from '@angular/core';
 import { AlertController, IonicPage, NavController } from 'ionic-angular';
-import { DataService, LocalStorageService } from '../../service';
+import { AppService, DataService, LocalStorageService } from '../../service';
 import { ImgBaseUrl } from '../../environments/env';
+import { UserInfo } from '../../class';
 
 @IonicPage()
 @Component({
   selector: 'page-order',
   templateUrl: 'order.html'
 })
-export class OrderPage implements OnInit {
+export class OrderPage extends UserInfo implements OnInit, OnDestroy {
   orderList: any;
   showLoading: boolean = true;
   offset: number = 0;
   imgBaseUrl: string = ImgBaseUrl;
   touchEnd: boolean = false;
   preventRepeatReuqest: boolean = false; // 到达底部加载数据，防止重复加载
-  constructor(public dataService: DataService,
+  unSubEvent: any;
+  constructor(
+    public appService: AppService,
+    public dataService: DataService,
     public localStorageService: LocalStorageService,
     public alertCtrl: AlertController,
     public navCtrl: NavController,
     public zone: NgZone,
     public elementRef: ElementRef) {
-    this.orderList = [];
+      super(appService, localStorageService);
   }
 
   ngOnInit() {
-    let userId = this.localStorageService.getStore('userId');
-    if (userId) {
-      this.dataService.getOrderList(userId, this.offset).subscribe(res => {
+    this.orderList = [];
+    if (this.userId) {
+      this.dataService.getOrderList(this.userId, this.offset).subscribe(res => {
         this.orderList = [...res];
         this.showLoading = false;
       });
@@ -43,6 +47,7 @@ export class OrderPage implements OnInit {
           return;
         }
         this.offset += 10;
+        this.preventRepeatReuqest = true;
         this.showLoading = true;
         let userId = this.localStorageService.getStore('userId');
         this.dataService.getOrderList(userId, this.offset).subscribe(res => {
@@ -51,16 +56,16 @@ export class OrderPage implements OnInit {
           }
           this.orderList = [...this.orderList, ...res];
           this.showLoading = false;
-          this.preventRepeatReuqest = true;
+          this.preventRepeatReuqest = false;
         });
       }
     });
   }
   // 显示详情页
-  showDetail(item) {
-    // this.SAVE_ORDER(item);
-    // this.preventRepeat = false;
-    // this.$router.push('/order/orderDetail');
+  showDetail(item: any) {
+    this.appService.orderDetail = item;
+    this.preventRepeatReuqest = false;
+    this.navCtrl.push('OrderDetailPage');
   }
   back() {
     let index = this.navCtrl.parent.previousTab().index;

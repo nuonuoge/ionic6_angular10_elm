@@ -1,5 +1,5 @@
-# ionic4_angular5_elm
-基于ionic4 + ng5 构建一个具有 45 个页面的大型单页面应用
+# ionic3_angular5_elm
+基于ionic3 + ng5 构建一个具有 45 个页面的大型单页面应用
 借鉴了[@bailicangdu](https://github.com/bailicangdu/vue2-elm) vue-elm项目，已征得其本人同意，[后台传送地址](https://github.com/bailicangdu/node-elm)
 
 
@@ -57,13 +57,13 @@ ionic serve
 - [x] 店铺评价页面 -- 完成
 - [x] 单个食品详情页面 -- 完成
 - [x] 商家详情页 -- 完成
-- [x] 登录、注册 -- 未完成
+- [x] 登录、注册 -- 完成
 - [x] 修改密码 -- 未完成
 - [x] 个人中心 -- 未完成
 - [x] 发送短信、语音验证 -- 未完成
 - [x] 下单功能 -- 完成
 - [x] 订单列表 -- 完成
-- [x] 订单详情 -- 未完成
+- [x] 订单详情 -- 完成
 - [x] 下载App -- 未完成
 - [x] 添加、删除、修改收货地址 -- 未完成
 - [x] 帐户信息 -- 未完成

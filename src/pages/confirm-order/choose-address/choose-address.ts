@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../../service';
-import { Tabs } from '../../../class/tabs';
+import { UserInfoTabs } from '../../../class';
 @IonicPage()
 @Component({
   selector: 'page-choose-address',
   templateUrl: 'choose-address.html'
 })
-export class ChooseAddressPage extends Tabs implements OnInit {
+export class ChooseAddressPage extends UserInfoTabs implements OnInit {
   addressList: any[];
   deliverable: any[];
   deliverdisable: any[];
@@ -20,16 +20,15 @@ export class ChooseAddressPage extends Tabs implements OnInit {
     public cartService: CartService,
     public shopService: ShopService,
     public dataService: DataService) {
-    super(tabsService);
+    super(appService, localStorageService, tabsService);
   }
 
   ngOnInit() {
     this.addressList = [];
     this.deliverable = [];
     this.deliverdisable = [];
-    let userId = this.localStorageService.getStore('userId');
-    if (userId) {
-      this.dataService.getAddressList(userId).subscribe(res => {
+    if (this.userId) {
+      this.dataService.getAddressList(this.userId).subscribe(res => {
         this.addressList = res;
         this.addressList.forEach(item => {
           if (item.is_deliverable) {

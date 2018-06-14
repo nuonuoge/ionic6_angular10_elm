@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-import { DataService, LocalStorageService } from '../../service';
+import { AppService, DataService, LocalStorageService } from '../../service';
 
 @IonicPage()
 @Component({
@@ -14,6 +14,7 @@ export class LoginPage implements OnInit {
   captchaCodeImg: string;
   codeNumber: string;
   constructor(public navCtrl: NavController,
+    public appService: AppService,
     public dataService: DataService,
     public storageService: LocalStorageService,
     public toastCtrl: ToastController) {
@@ -65,6 +66,7 @@ export class LoginPage implements OnInit {
         this.toastTip(res.message);
       } else {
         this.storageService.setStore('userId', res.user_id);
+        this.appService.userInfoEvent.emit('update');
         this.navCtrl.pop();
       }
     });

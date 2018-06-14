@@ -8,8 +8,8 @@ import {
   state,
   keyframes
 } from '@angular/animations';
-import { DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../service';
-import { Tabs } from '../../class/tabs';
+import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../service';
+import { UserInfoTabs } from '../../class';
 import { ImgBaseUrl } from '../../environments/env';
 
 @IonicPage()
@@ -31,7 +31,7 @@ import { ImgBaseUrl } from '../../environments/env';
     ])
   ]
 })
-export class ShopPage extends Tabs implements OnInit {
+export class ShopPage extends UserInfoTabs implements OnInit {
   geohash: string = ''; // geohash位置信息
   shopId: any; // 商店id值
   showLoading: boolean = true; // 显示加载动画
@@ -67,6 +67,7 @@ export class ShopPage extends Tabs implements OnInit {
   scrollContent: any;
   items: any[] = [];
   constructor(public navCtrl: NavController,
+    public appService: AppService,
     public tabsService: TabsService,
     public dataService: DataService,
     public navParams: NavParams,
@@ -74,7 +75,7 @@ export class ShopPage extends Tabs implements OnInit {
     public cartService: CartService,
     public shopService: ShopService,
     public el: ElementRef) {
-    super(tabsService);
+    super(appService, localStorageService, tabsService);
     this.geohash = this.navParams.get('geohash');
     this.shopId = this.navParams.get('id');
     this.cartFoodList = [];
@@ -302,8 +303,7 @@ export class ShopPage extends Tabs implements OnInit {
     }
   }
   toConfirmOrder() {
-    let userId = this.localStorageService.getStore('userId');
-    if (userId) {
+    if (this.userId) {
       this.navCtrl.push('ConfirmOrderPage', {
         geohash: this.geohash,
         shopId: this.shopId

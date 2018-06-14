@@ -32,7 +32,7 @@ export class PaymentPage extends Tabs implements OnInit {
       this.cartService.clearCart(this.appService.shopId);
     }
     this.remainingTime();
-    // this.payDetail = await payRequest(this.orderMessage.order_id, this.userInfo.user_id);
+    // this.payDetail = await payRequest(this.orderMessage.order_id, this.UserInfoTabs.user_id);
     // if (this.payDetail.message) {
     //   this.showAlert = true;
     //   this.alertText = this.payDetail.message;

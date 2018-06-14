@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { DataService, LocalStorageService, TabsService, AppService } from '../../../service';
-import { Tabs } from '../../../class/tabs';
+import { UserInfoTabs } from '../../../class';
 @IonicPage()
 @Component({
   selector: 'page-add-address',
   templateUrl: 'add-address.html'
 })
-export class AddAddressPage extends Tabs {
+export class AddAddressPage extends UserInfoTabs {
   name: string = null; // 姓名
   sex: number = 1; // 性别
   phone: string = null; // 电话
@@ -23,7 +23,7 @@ export class AddAddressPage extends Tabs {
     public appService: AppService,
     public dataService: DataService,
     public toastCtrl: ToastController) {
-    super(tabsService);
+    super(appService, localStorageService, tabsService);
   }
 
   searchAddress(): any {
@@ -50,9 +50,8 @@ export class AddAddressPage extends Tabs {
 
   // 保存地址信息
   addAddress() {
-    let userId = this.localStorageService.getStore('userId');
     let alertText = '';
-    if (!userId) {
+    if (!this.userId) {
       alertText = '请登录';
     } else if (!this.name) {
       this.showAlert = true;
@@ -78,7 +77,7 @@ export class AddAddressPage extends Tabs {
     } else if (this.tag === '公司') {
       this.tagType = 4;
     }
-    this.dataService.postAddAddress(userId, this.searchAddress().name, this.addressDetail,
+    this.dataService.postAddAddress(this.userId, this.searchAddress().name, this.addressDetail,
       this.appService.geohash, this.name, this.phone, this.anntherPhoneNumber, 0,
       this.sex, this.tag, this.tagType)
     .subscribe(res => {

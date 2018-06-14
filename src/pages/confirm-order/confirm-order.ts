@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../service';
-import { Tabs } from '../../class/tabs';
+import { UserInfoTabs } from '../../class';
 import { ImgBaseUrl } from '../../environments/env';
 @IonicPage()
 @Component({
   selector: 'page-confirm-order',
   templateUrl: 'confirm-order.html'
 })
-export class ConfirmOrderPage extends Tabs implements OnInit {
+export class ConfirmOrderPage extends UserInfoTabs implements OnInit {
   geohash: string = ''; // geohash位置信息
   shopId: string = null; // 商店id值
   showLoading: boolean = true; // 显示加载动画
@@ -28,7 +28,7 @@ export class ConfirmOrderPage extends Tabs implements OnInit {
     public shopService: ShopService,
     public appService: AppService,
     public dataService: DataService) {
-    super(tabsService);
+    super(appService, localStorageService, tabsService);
     this.geohash = this.navParams.get('geohash');
     this.appService.geohash = this.geohash;
     this.shopId = this.navParams.get('shopId');
@@ -99,9 +99,8 @@ export class ConfirmOrderPage extends Tabs implements OnInit {
 
   // 获取地址信息，第一个地址为默认选择地址
   initAddress() {
-    let userId: any = this.localStorageService.getStore('userId');
-    if (userId) {
-      this.dataService.getAddressList(userId).subscribe(res => {
+    if (this.userId) {
+      this.dataService.getAddressList(this.userId).subscribe(res => {
         let addressRes = res;
         if (addressRes instanceof Array && addressRes.length) {
           this.appService.choosedAddress = { address: addressRes[0], index: 0 };
@@ -143,7 +142,7 @@ export class ConfirmOrderPage extends Tabs implements OnInit {
     }
     // 保存订单
     // this.SAVE_ORDER_PARAM({
-    //   user_id: this.userInfo.user_id,
+    //   user_id: this.UserInfoTabs.user_id,
     //   cart_id: this.checkoutData.cart.id,
     //   address_id: this.choosedAddress.id,
     //   description: this.remarklist,

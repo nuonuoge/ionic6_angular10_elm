@@ -10,6 +10,7 @@ import { LoadingComponent } from './loading/loading';
 import { ElmSvgComponent } from './svg/svg';
 import { BuyCartComponent } from './buy-cart/buy-cart';
 import { DirectivesModule } from '../directives';
+import { LoginHeaderComponent } from './login-header/login-header';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DirectivesModule } from '../directives';
     RatingStarComponent,
     LoadingComponent,
     ElmSvgComponent,
-    BuyCartComponent
+    BuyCartComponent,
+    LoginHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { DirectivesModule } from '../directives';
     RatingStarComponent,
     LoadingComponent,
     ElmSvgComponent,
-    BuyCartComponent
+    BuyCartComponent,
+    LoginHeaderComponent
   ],
   entryComponents: []
 })
