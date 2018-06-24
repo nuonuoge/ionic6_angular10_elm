@@ -87,6 +87,7 @@ export class AddAddressPage extends UserInfoTabs {
       } else {
         this.appService.searchAddress = '';
         this.navCtrl.pop();
+        this.appService.notify.emit('refresh');
       }
     });
   }
