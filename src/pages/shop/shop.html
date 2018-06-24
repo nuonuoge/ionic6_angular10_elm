@@ -186,8 +186,8 @@
     <div name="fade">
       <p class="show_delete_tip" *ngIf="showDeleteTip">多规格商品只能去购物车删除哦</p>
     </div>
-    <ng-container *ngFor="let item of showMoveDot">
-      <span class="move_dot" *ngIf="item" (@flyInCart.start)="animationStarted($event)" (@flyInCart.done)="animationDone($event)"
+    <ng-container *ngFor="let item of showMoveDot; index as index">
+      <span class="move_dot" *ngIf="item" (@flyInCart.start)="animationStarted($event)" (@flyInCart.done)="animationDone($event, index)"
       [@flyInCart]="'in'">
         <svg class="move_liner">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-add"></use>

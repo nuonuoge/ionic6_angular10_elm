@@ -238,6 +238,7 @@ export class ShopPage extends UserInfoTabs implements OnInit {
   addSpecs(category_id, item_id, food_id, name, price, specs, packing_fee, sku_id, stock) {
     this.cartService.addCart({ shopid: this.shopId, category_id, item_id, food_id, name, price, specs, packing_fee, sku_id, stock });
     this.onShowChooseList();
+    this.shopCartChange();
   }
 
   // 加入购物车，所需7个参数，商铺id，食品分类id，食品id，食品规格id，食品名字，食品价格，食品规格
@@ -268,11 +269,11 @@ export class ShopPage extends UserInfoTabs implements OnInit {
 
   animationStarted(event) {
     let el = event.element;
-    el.style.transform = `translate3d(0,${37 + this.elBottom - this.windowHeight}px,0)`;
-    el.children[0].style.transform = `translate3d(${this.elLeft - 30}px,0,0)`;
+    el.style.transform = `translate3d(0,${29 + this.elBottom - this.windowHeight}px,0)`;
+    el.children[0].style.transform = `translate3d(${this.elLeft - 22}px,0,0)`;
     el.children[0].style.opacity = 0;
   }
-  animationDone(event) {
+  animationDone(event: any, index: number) {
     let el = event.element;
     el.style.transform = `translate3d(0,0,0)`;
     el.children[0].style.transform = `translate3d(0,0,0)`;
@@ -280,12 +281,17 @@ export class ShopPage extends UserInfoTabs implements OnInit {
     el.children[0].style.transition = 'transform .55s linear';
     el.children[0].style.opacity = 1;
     el.children[0].addEventListener('transitionend', () => {
+      if (this.showMoveDot.length === index + 1) {
+        this.showMoveDot = this.showMoveDot.map(item => false);
+      }
       this.listenInCart();
     });
     el.children[0].addEventListener('webkitAnimationEnd', () => {
+      if (this.showMoveDot.length === index + 1) {
+        this.showMoveDot = this.showMoveDot.map(item => false);
+      }
       this.listenInCart();
     });
-
   }
   // 监听圆点是否进入购物车
   listenInCart() {
@@ -294,11 +300,9 @@ export class ShopPage extends UserInfoTabs implements OnInit {
       let el = this.el.nativeElement.getElementsByClassName('cart_icon_container')[0];
       el.addEventListener('animationend', () => {
         this.receiveInCart = false;
-        this.showMoveDot = this.showMoveDot.map(item => false);
       });
       el.addEventListener('webkitAnimationEnd', () => {
         this.receiveInCart = false;
-        this.showMoveDot = this.showMoveDot.map(item => false);
       });
     }
   }
