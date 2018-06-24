@@ -168,7 +168,7 @@
           </section>
           <footer class="confirm_filter">
             <div class="clear_all filter_button_style" (click)="clearSelect()">清空</div>
-            <div class="confirm_select filter_button_style" (click)="getShopList();sortBy='';">确定<span [hidden]="!filterNum">({{filterNum}})</span></div>
+            <div class="confirm_select filter_button_style" (click)="offset=0;getShopList();sortBy='';">确定<span [hidden]="!filterNum">({{filterNum}})</span></div>
           </footer>
         </section>
       </div>

@@ -29,6 +29,7 @@ export class FoodPage extends Tabs implements OnInit {
   offset: number;
   touchend: boolean;
   showLoading: boolean;
+  preventRepeatReuqest: boolean = false; // 到达底部加载数据，防止重复加载
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -104,6 +105,7 @@ export class FoodPage extends Tabs implements OnInit {
           this.shopList = [...res];
         }
         this.showLoading = false;
+        this.preventRepeatReuqest = false;
       });
   }
 
@@ -157,6 +159,7 @@ export class FoodPage extends Tabs implements OnInit {
     this.restaurantCategoryIds = id;
     this.sortBy = '';
     this.foodTitle = this.headTitle = name;
+    this.offset = 0;
     this.getShopList();
 
   }
@@ -171,6 +174,7 @@ export class FoodPage extends Tabs implements OnInit {
     }
     this.sortByType = node.getAttribute('data');
     this.sortBy = '';
+    this.offset = 0;
     this.getShopList();
   }
   // 筛选选项中的配送方式选择
@@ -211,8 +215,12 @@ export class FoodPage extends Tabs implements OnInit {
     this.zone.run(() => {
       let scrollContent = this.elementRef.nativeElement.getElementsByClassName('scroll-content')[0];
       if (scrollContent.scrollTop + scrollContent.clientHeight >= scrollContent.scrollHeight) {
+        if (this.preventRepeatReuqest) {
+          return;
+        }
         this.offset += 20;
         this.showLoading = true;
+        this.preventRepeatReuqest = true;
         this.getShopList(true);
       }
     });
