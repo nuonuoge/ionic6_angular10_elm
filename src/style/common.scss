@@ -1,3 +1,30 @@
+a, article, aside, b, body, button, dd, div, dl, dt, figcaption, figure, footer, h1, h2, h3, h4, h5, h6, header, i, input, li, nav, p, section, select, span, textarea, ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    color: #333;
+    font-weight: 400;
+    font-family: Microsoft Yahei;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 14px;
+}
+
+@keyframes backOpacity{
+   0%   { opacity: 1 }
+   25%  { opacity: .5 }
+   50%  { opacity: 1 }
+   75%  { opacity: .5 }
+   100% { opacity: 1 }
+}
+
 .animation_opactiy{
   animation: backOpacity 2s ease-in-out infinite;
 }
