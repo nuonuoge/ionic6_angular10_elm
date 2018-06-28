@@ -4,9 +4,7 @@ import {
   trigger,
   style,
   animate,
-  transition,
-  state,
-  keyframes
+  transition
 } from '@angular/animations';
 import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../service';
 import { UserInfoTabs } from '../../class';

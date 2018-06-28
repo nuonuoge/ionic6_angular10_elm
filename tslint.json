@@ -107,6 +107,10 @@
       "check-operator",
       "check-separator",
       "check-type"
+    ],
+    "no-duplicate-variable": true,
+    "no-unused-variable": [
+      true
     ]
   }
 }

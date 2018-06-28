@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { AppService, CartService, DataService, LocalStorageService, TabsService, ShopService } from '../../../service';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppService, CartService, DataService, LocalStorageService, TabsService } from '../../../service';
 import { Tabs } from '../../../class/tabs';
 @IonicPage()
 @Component({

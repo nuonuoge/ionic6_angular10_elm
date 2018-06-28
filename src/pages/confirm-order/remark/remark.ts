@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../../service';
+import { AppService, DataService, LocalStorageService, TabsService } from '../../../service';
 import { Tabs } from '../../../class/tabs';
 @IonicPage()
 @Component({

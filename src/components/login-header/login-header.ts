@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { Component } from '@angular/core';
 import { AppService, LocalStorageService } from '../../service';
 import { UserInfo } from '../../class';
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataService, AppService, TabsService} from '../../../service';
 import { Tabs } from '../../../class/tabs';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { AppService, DataService, LocalStorageService, TabsService } from '../../../service';
 import { ImgBaseUrl } from '../../../environments/env';
 import { UserInfoTabs } from '../../../class';

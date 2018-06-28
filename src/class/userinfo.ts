@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { AppService, LocalStorageService, TabsService } from '../service';
+import { AppService, LocalStorageService } from '../service';
 export class UserInfo implements OnInit, OnDestroy {
   public userId: string;
   unSubEvent: any;
