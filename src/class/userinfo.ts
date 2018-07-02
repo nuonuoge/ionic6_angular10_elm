@@ -1,8 +1,9 @@
 import { OnDestroy, OnInit } from '@angular/core';
 import { AppService, LocalStorageService } from '../service';
+import { Subscription } from 'rxjs/Subscription';
 export class UserInfo implements OnInit, OnDestroy {
   public userId: string;
-  unSubEvent: any;
+  unSubEvent: Subscription;
   constructor(public appService: AppService,
     public localStorageService: LocalStorageService) {
     this.userId = this.localStorageService.getStore('userId');

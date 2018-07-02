@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Subscription } from 'rxjs/Subscription';
 import { AppService, DataService, LocalStorageService, TabsService, CartService, ShopService } from '../../../service';
 import { UserInfoTabs } from '../../../class';
 @IonicPage()
@@ -12,7 +13,7 @@ export class ChooseAddressPage extends UserInfoTabs implements OnInit, OnDestroy
   deliverable: any[];
   deliverdisable: any[];
   iconColor: any = {'公司': '#4cd964', '学校': '#3190e8', '家': '#ff5722'};
-  unSub: any;
+  unSub: Subscription;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public appService: AppService,

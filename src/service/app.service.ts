@@ -3,8 +3,8 @@ import { Injectable, EventEmitter } from '@angular/core';
 @Injectable()
 
 export class AppService {
-  public userInfoEvent: any = new EventEmitter();
-  public notify: any =  new EventEmitter();
+  public userInfoEvent: EventEmitter<any> = new EventEmitter();
+  public notify: EventEmitter<any> =  new EventEmitter();
   public geohash: string = '';
   public shopId: string = '';
   public searchAddress: any;

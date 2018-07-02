@@ -6,8 +6,8 @@ export class ShopService {
   shopDetailData: any;
   ratingScoresData: any;
   ratingList: any;
-  updateData: any = new EventEmitter();
-  loaderMoreRatings: any = new EventEmitter();
+  updateData: EventEmitter<any> = new EventEmitter();
+  loaderMoreRatings: EventEmitter<any> = new EventEmitter();
 
   setShopDetailData(data: any) {
     this.shopDetailData = data;

@@ -9,9 +9,9 @@ import { LocalStorageService, CartService } from '../../service';
 export class BuyCartComponent {
   @Input() foods: any;
   @Input() shopId: string;
-  @Output() onCartChange = new EventEmitter();
-  @Output() onShowChooseList = new EventEmitter();
-  @Output() onShowMoveDot = new EventEmitter();
+  @Output() onCartChange: EventEmitter<any> = new EventEmitter();
+  @Output() onShowChooseList: EventEmitter<any> = new EventEmitter();
+  @Output() onShowMoveDot: EventEmitter<any> = new EventEmitter();
   showMoveDot: any = [];
   constructor(public storageService: LocalStorageService, public cartService: CartService, public toastCtrl: ToastController) {
 

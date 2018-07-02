@@ -1,9 +1,10 @@
 import { OnDestroy, OnInit } from '@angular/core';
 import { AppService, LocalStorageService, TabsService } from '../service';
 import { Tabs } from './tabs';
+import { Subscription } from 'rxjs/Subscription';
 export class UserInfoTabs extends Tabs implements OnInit, OnDestroy {
   public userId: string;
-  unSubEvent: any;
+  unSubEvent: Subscription;
   constructor(public appService: AppService,
     public localStorageService: LocalStorageService,
     public tabsService: TabsService) {

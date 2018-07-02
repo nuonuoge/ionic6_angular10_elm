@@ -16,7 +16,6 @@ export class OrderPage extends UserInfo implements OnInit, OnDestroy {
   imgBaseUrl: string = ImgBaseUrl;
   touchEnd: boolean = false;
   preventRepeatReuqest: boolean = false; // 到达底部加载数据，防止重复加载
-  unSubEvent: any;
   constructor(
     public appService: AppService,
     public dataService: DataService,
