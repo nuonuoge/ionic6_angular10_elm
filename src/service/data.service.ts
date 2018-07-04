@@ -229,5 +229,11 @@ export class DataService {
     return this.http.get('/bos/v1/users/' + userId + '/orders/' + orderId + '/snapshot');
   }
 
+  getUserInfo(userId: string): any {
+    let params = new HttpParams()
+      .set('user_id', userId);
+    return this.http.get('/v1/user', { params: params });
+  }
+
 }
 

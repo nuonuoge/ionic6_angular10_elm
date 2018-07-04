@@ -66,10 +66,6 @@ export class OrderPage extends UserInfo implements OnInit, OnDestroy {
     this.preventRepeatReuqest = false;
     this.navCtrl.push('OrderDetailPage');
   }
-  back() {
-    let index = this.navCtrl.parent.previousTab().index;
-    this.navCtrl.parent.select(index);
-  }
 
   presentConfirm(message: string) {
     let alert = this.alertCtrl.create({

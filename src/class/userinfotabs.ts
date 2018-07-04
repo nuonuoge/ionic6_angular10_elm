@@ -10,7 +10,7 @@ export class UserInfoTabs extends Tabs implements OnInit, OnDestroy {
     public tabsService: TabsService) {
     super(tabsService);
     this.userId = this.localStorageService.getStore('userId');
-    this.appService.userInfoEvent.subscribe(res => {
+    this.unSubEvent = this.appService.userInfoEvent.subscribe(res => {
       this.userId = this.localStorageService.getStore('userId');
       this.ngOnInit();
     });
