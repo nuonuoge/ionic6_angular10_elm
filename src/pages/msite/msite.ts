@@ -35,7 +35,6 @@ export class MsitePage implements OnInit {
     public zone: NgZone,
     public elementRef: ElementRef) {
     this.geohash = navParams.get('geohash');
-    this.params = { geohash: this.geohash };
     this.offset = 0;
     this.shopList = [];
     this.touchend = false;
@@ -44,11 +43,24 @@ export class MsitePage implements OnInit {
   }
 
   ngOnInit() {
-    this.latitude = this.geohash.split(',')[0];
-    this.longitude = this.geohash.split(',')[1];
-    this.getPoisGeohash();
-    this.getMsiteFoodTypes();
-    this.getShopList();
+    if (this.geohash) {
+      this.latitude = this.geohash.split(',')[0];
+      this.longitude = this.geohash.split(',')[1];
+      this.params = { geohash: this.geohash };
+      this.getPoisGeohash();
+      this.getMsiteFoodTypes();
+      this.getShopList();
+    } else {
+      this.dataService.getGuessCity().subscribe(res => {
+        this.latitude = res.latitude;
+        this.longitude = res.longitude;
+        this.geohash = res.latitude + ',' +  res.longitude;
+        this.params = { geohash: this.geohash};
+        this.getPoisGeohash();
+        this.getMsiteFoodTypes();
+        this.getShopList();
+      });
+    }
   }
 
   getCategoryId(url) {

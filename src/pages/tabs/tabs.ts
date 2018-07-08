@@ -12,7 +12,7 @@ export class TabsPage {
   tabSearchRoot = 'SearchPage';
   tabOrderRoot = 'OrderPage';
   tabProfileRoot = 'ProfilePage';
-  tabPages = ['MsitePage'];
+  tabPages = ['MsitePage', 'SearchPage', 'OrderPage', 'ProfilePage'];
   geohashParams: any;
   hideTabs: boolean;
   selectedIndex: number;
@@ -25,7 +25,7 @@ export class TabsPage {
     this.tabsService.tabsEvent.subscribe(res => {
       this.hideTabs = res;
     });
-    const pageName = navParams.get('page');
+    const pageName = navParams.get('pageName');
     this.geohashParams = {geohash: navParams.get('geohash')};
     this.selectedIndex = this.getPageIndex(pageName);
   }

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { AppService, DataService, LocalStorageService } from '../../service';
 import { Subscription } from 'rxjs/Subscription';
 import { ImgBaseUrl } from '../../environments/env';
@@ -17,6 +17,7 @@ export class ProfilePage implements OnDestroy, OnInit {
   imgBaseUrl: string = ImgBaseUrl;
 
   constructor(public appService: AppService,
+    public navCtrl: NavController,
     public dataService: DataService,
     public localStorageService: LocalStorageService) {
     this.subEvent = this.appService.userInfoEvent.subscribe(res => {
@@ -45,6 +46,10 @@ export class ProfilePage implements OnDestroy, OnInit {
     this.localStorageService.removeStore('userId');
     this.userInfo = {};
     this.appService.userInfoEvent.emit('update');
+  }
+
+  public toOrderPage() {
+    this.navCtrl.parent.select(this.appService.getTabPagesIndex('OrderPage'));
   }
 
   ngOnDestroy() {
