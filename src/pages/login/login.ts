@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-import { AppService, DataService, LocalStorageService } from '../../service';
+import { AppService, DataService, LocalStorageService, TabsService } from '../../service';
+import { Tabs } from '../../class/tabs';
 
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
-export class LoginPage implements OnInit {
+export class LoginPage extends Tabs implements OnInit {
   userName: string;
   userPwd: string;
   showPwd: boolean;
@@ -16,8 +17,10 @@ export class LoginPage implements OnInit {
   constructor(public navCtrl: NavController,
     public appService: AppService,
     public dataService: DataService,
+    public tabsService: TabsService,
     public storageService: LocalStorageService,
     public toastCtrl: ToastController) {
+      super(tabsService);
   }
 
   ngOnInit() {
