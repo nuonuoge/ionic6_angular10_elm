@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { App, IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DataService, LocalStorageService } from '../../service';
+import { AppService, DataService, LocalStorageService } from '../../service';
 @IonicPage()
 @Component({
   selector: 'page-city',
@@ -17,6 +17,7 @@ export class CityPage implements OnInit {
   constructor(public navCtrl: NavController,
               public appCtrl: App,
               public navParams: NavParams,
+              public appService: AppService,
               public dataService: DataService,
               public storageService: LocalStorageService) {
     this.guessCityId = navParams.get('id');
@@ -80,6 +81,7 @@ export class CityPage implements OnInit {
 
   toMiste(place: any) {
     this.setSearchStorage(place);
+    this.appService.geohash = place.geohash;
     this.appCtrl.getRootNav().push('TabsPage', {
       pageName: 'MsitePage',
       geohash: place.geohash

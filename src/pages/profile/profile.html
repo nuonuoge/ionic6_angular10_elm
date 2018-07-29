@@ -58,15 +58,15 @@
         </span>
       </div>
     </section>
-    <!-- 饿了么会员卡 -->
-    <section class="myorder">
+    <!-- 收货地址 -->
+    <section class="myorder" [navPush]="'AddressPage'">
       <aside>
-        <svg fill="#ffc636">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vip"></use>
+        <svg fill="#4aa5f0">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
         </svg>
       </aside>
       <div class="myorder-div">
-        <span>饿了么会员卡</span>
+        <span>收货地址</span>
         <span class="myorder-divsvg">
           <svg fill="#bbb">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
@@ -75,7 +75,7 @@
       </div>
     </section>
     <!-- 服务中心 -->
-    <section class="myorder">
+    <!--<section class="myorder">
       <aside>
         <svg fill="#4aa5f0">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#service"></use>
@@ -89,7 +89,7 @@
           </svg>
         </span>
       </div>
-    </section>
+    </section>-->
   </section>
   <section *ngIf="userId" class="profile-exit" (click)="exit()">
     <span class="btn-exit">退出登录</span>

@@ -10,4 +10,4 @@ import { ChooseAddressPage } from './choose-address';
     IonicPageModule.forChild(ChooseAddressPage)
   ]
 })
-export class ConfirmOrderPageModule {}
+export class ChooseAddressPageModule {}

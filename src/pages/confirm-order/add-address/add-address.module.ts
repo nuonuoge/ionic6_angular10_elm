@@ -10,4 +10,4 @@ import { AddAddressPage } from './add-address';
     IonicPageModule.forChild(AddAddressPage)
   ]
 })
-export class ConfirmOrderPageModule {}
+export class AddAddressPageModule {}
