@@ -1,5 +1,6 @@
-# ionic3_angular5_elm
+# ionic4_angular6_elm
 基于ionic4 + ng6 构建一个具有 30+ 页面的大型单页面应用(v4升级正在逐步合入中)
+
 基于ionic3 + ng5 构建一个具有 30+ 页面的大型单页面应用(请使用v3分支)
 借鉴了[@bailicangdu](https://github.com/bailicangdu/vue2-elm) vue-elm项目，已征得其本人同意，[后台传送地址](https://github.com/bailicangdu/node-elm)
 
