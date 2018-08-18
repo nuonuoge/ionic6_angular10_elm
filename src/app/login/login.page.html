@@ -1,0 +1,38 @@
+<ion-header>
+  <back-header hTitle="密码登录"></back-header>
+</ion-header>
+
+<ion-content>
+  <div class="login_content">
+    <form class="login_form">
+      <section class="input_container">
+        <input type="text" name="username" placeholder="账号" [(ngModel)]="userName">
+      </section>
+      <section class="input_container input_pwd">
+        <input *ngIf="!showPwd" type="password" placeholder="密码" name="userpwd" [(ngModel)]="userPwd">
+        <input *ngIf="showPwd" type="text" placeholder="密码" name="userpwd" [(ngModel)]="userPwd">
+        <ion-toggle name="showpwd" [(ngModel)]="showPwd"></ion-toggle>
+      </section>
+      <section class="input_container captcha_code_container">
+        <input type="text" placeholder="验证码" maxlength="4" name="codenumber" [(ngModel)]="codeNumber">
+        <div class="img_change_img">
+          <img [hidden]="!captchaCodeImg" [src]="captchaCodeImg">
+          <div class="change_img" (click)="getCaptchaCode()">
+            <p>看不清</p>
+            <p>换一张</p>
+          </div>
+        </div>
+      </section>
+    </form>
+  </div>
+  <p class="login_tips">
+    温馨提示：未注册过的账号，登录时将自动注册
+  </p>
+  <p class="login_tips">
+    注册过的用户可凭账号密码登录
+  </p>
+
+  <div class="button_login">
+    <ion-button height="3rem" expand="full" color="success" (click)="logIn()">登录</ion-button>
+  </div>
+</ion-content>

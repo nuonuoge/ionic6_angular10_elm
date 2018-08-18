@@ -1,0 +1,28 @@
+<ion-header>
+  <back-header hTitle="收货地址"></back-header>
+</ion-header>
+<ion-content>
+  <section id="scroll_section" class="scroll_container">
+    <section class="list_cotainer">
+      <ul class="deliverable_address">
+        <li *ngFor="let item of addressList">
+          <div>
+            <header>
+              <span>{{item.name}}</span>
+              <span>{{item.sex == 1? '先生' : '女士'}}</span>
+              <span>{{item.phone}}</span>
+            </header>
+            <div class="address_detail ellipsis">
+              <span *ngIf="item.tag" [ngStyle]="{color: iconColor[item.tag]}">{{item.tag}}</span>
+              <p>{{item.address_detail}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <div class="add_icon_footer" [routerLink]="['/address/add']">
+    <img src="../../../assets/imgs/add_address.png" height="24" width="24">
+    <span>新增收货地址</span>
+  </div>
+</ion-content>

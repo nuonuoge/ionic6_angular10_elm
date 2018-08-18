@@ -1,0 +1,24 @@
+<ion-header>
+  <back-header hTitle="搜索"></back-header>
+</ion-header>
+<ion-content>
+  <div class="search_address_page">
+    <section>
+      <form class="search_form">
+        <input type="search" name="search" placeholder="请输入小区/写字楼/学校等" [(ngModel)]="searchValue">
+        <button (click)="searchPlace()">搜索</button>
+      </form>
+      <ul class="address_list" *ngIf="searchData">
+        <li *ngFor="let item of searchData" (click)="choooedAddress(item)">
+          <h4>{{item.name}}</h4>
+          <p>{{item.address}}</p>
+        </li>
+      </ul>
+      <div *ngIf="!searchData" class="empty_tips">
+        <p>找不到地址？</p>
+        <p>尝试输入小区、写字楼或学校名</p>
+        <p>详细地址（如门牌号等）可稍后输入哦</p>
+      </div>
+    </section>
+  </div>
+</ion-content>

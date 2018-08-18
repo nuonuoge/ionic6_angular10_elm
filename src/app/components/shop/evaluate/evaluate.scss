@@ -1,0 +1,142 @@
+@import "../../../../style/mixin.scss";
+.rating_container{
+    flex: 1;
+    flex-direction: column;
+    p, span, li, time{
+        font-family: Helvetica Neue,Tahoma,Arial;
+    }
+    .rating_header{
+        display: flex;
+        background-color: #fff;
+        padding: .8rem .5rem;
+        .rating_header_left{
+            flex: 3;
+            text-align: center;
+            p:nth-of-type(1){
+                @include sc(2rem, #f60);
+            }
+            p:nth-of-type(2){
+                @include sc(1.1rem, #666);
+                margin-bottom: .1rem;
+            }
+            p:nth-of-type(3){
+                @include sc(.67rem, #999);
+            }
+        }
+        .rating_header_right{
+            flex: 4;
+            p{
+                font-size: 1rem;
+                line-height: 1.67rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                span:nth-of-type(1){
+                    color: #666;
+                    margin-right: .5rem;
+                }
+                .rating_num{
+                    width: 3rem;
+                    @include sc(.92rem, #f60);
+                }
+                .delivery_time{
+                    @include sc(.67rem, #999);
+                }
+            }
+        }
+    }
+    .tag_list_ul{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fff;
+        padding: .5rem;
+        li{
+            @include sc(1rem, #6d7885);
+            padding: .3rem .3rem;
+            background-color: #ebf5ff;
+            border-radius: 0.2rem;
+            border: 1px;
+            margin: 0 .4rem .2rem 0;
+        }
+        .unsatisfied{
+            background-color: #f5f5f5;
+            color: #aaa;
+        }
+        .tagActivity{
+            background-color: #3190e8;
+            color: #fff;
+        }
+    }
+    .rating_list_ul{
+        background-color: #fff;
+        padding: 0 .5rem;
+        .rating_list_li{
+            border-top: 1px solid #f1f1f1;
+            display: flex;
+            padding: .6rem 0;
+            .user_avatar{
+                @include wh(1.5rem, 1.5rem);
+                border: 0.025rem;
+                border-radius: 50%;
+                margin-right: .8rem;
+            }
+            .rating_list_details{
+                flex: 1;
+                header{
+                    display: flex;
+                    flex: 1;
+                    justify-content: space-between;
+                    margin-bottom: .3rem;
+                    .username_star{
+                        @include sc(.55rem, #666);
+                        .username{
+                            color: #666;
+                            margin-bottom: .2rem;
+                        }
+                        .star_desc{
+                            display: flex;
+                            align-items: center;
+                            .time_spent_desc{
+                                @include sc(.92rem, #666);
+                                margin-left: .15rem;
+                            }
+                        }
+                    }
+                    .rated_at{
+                        @include sc(.67rem, #999);
+                    }
+                }
+                .food_img_ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: .4rem;
+                    li{
+                        img{
+                            @include wh(5rem, 5rem);
+                            margin-right: .67rem;
+                            display: block;
+                        }
+                    }
+                }
+                .food_name_ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    li{
+                        @include sc(.92rem, #999);
+                        width: 4rem;
+                        padding: .2rem;
+                        border: 0.025rem solid #ebebeb;
+                        border-radius: 0.15rem;
+                        margin-right: .5rem;
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+.empty_data{
+    @include sc(0.835rem, #666);
+    text-align: center;
+    line-height: 3.34rem;
+}

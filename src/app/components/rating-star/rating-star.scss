@@ -1,0 +1,25 @@
+@import "../../../style/mixin.scss";
+.rating_container{
+  position: relative;
+  top: .334rem;
+  @include wh(3.34rem, .668rem);
+  .star_overflow{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+  .star_container{
+    position: absolute;
+    display: flex;
+    width: 3.34rem;
+    height: 0.668rem;
+    top: -0.0334rem;
+    left: -0.0334rem;
+    .grey_fill{
+        fill: #d1d1d1;
+    }
+    .orange_fill{
+        fill: #ff9a0d;
+    }
+  }
+}

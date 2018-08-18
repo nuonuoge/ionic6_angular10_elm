@@ -1,0 +1,50 @@
+@import "../../../style/mixin.scss";
+ion-content {
+    background-color: #fff;
+}
+.search_address_page{
+    overflow-y: auto;
+}
+.search_form{
+    display: flex;
+    padding: 1.16rem;
+    input{
+        @include sc(1.1rem, #999);
+        flex: 4;
+        background-color: #f1f1f1;
+        margin-right: 1rem;
+        height: 2.5rem;
+        border-radius: 0.25rem;
+        padding: 0 .67rem;
+    }
+    button{
+        flex: 1;
+        @include sc(1.1rem, #fff);
+        background-color: $blue;
+        border-radius: 0.25rem;
+    }
+}
+.address_list{
+    padding: 1.16rem;
+    li{
+        padding: 1.16rem 0;
+        border-bottom: 0.041rem solid #f5f5f5;
+        line-height: 1.6rem;
+        h4{
+            @include sc(1.25rem, #555);
+        }
+        p{
+            @include sc(1.1rem, #999);
+        }
+    }
+}
+.empty_tips{
+    @include center;
+    width: 100%;
+    p{
+        @include sc(0.83rem, #aaa);
+        line-height: 1.16rem;
+        text-align: center;
+
+    }
+}

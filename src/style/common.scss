@@ -5,7 +5,7 @@ a, article, aside, b, body, button, dd, div, dl, dt, figcaption, figure, footer,
     font-style: normal;
     text-decoration: none;
     border: none;
-    color: #333;
+    outline: none;
     font-weight: 400;
     font-family: Microsoft Yahei;
     box-sizing: border-box;
@@ -15,6 +15,12 @@ a, article, aside, b, body, button, dd, div, dl, dt, figcaption, figure, footer,
 
 html {
   font-size: 14px;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 @keyframes backOpacity{
@@ -27,4 +33,17 @@ html {
 
 .animation_opactiy{
   animation: backOpacity 2s ease-in-out infinite;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  box-shadow:0 0 0 60px #fff inset !important;
+  -webkit-text-fill-color: #666 !important;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

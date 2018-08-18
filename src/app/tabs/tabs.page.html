@@ -1,0 +1,14 @@
+<ion-tabs>
+  <ion-tab label="外卖" icon="assets/icon/elm.svg" href="/app/tab/(msite:msite)">
+    <ion-router-outlet name="msite"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="搜索" icon="assets/icon/find.svg" href="/app/tab/(search:search)">
+    <ion-router-outlet name="search"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab tabsHideOnSubPages="true" label="订单" icon="assets/icon/order.svg" href="/app/tab/(order:order)">
+    <ion-router-outlet name="order"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="我的" icon-size="small" icon="assets/icon/mine.svg" href="/app/tab/(profile:profile)">
+    <ion-router-outlet name="profile"></ion-router-outlet>
+  </ion-tab>
+</ion-tabs>

@@ -1,0 +1,52 @@
+<ion-header>
+  <back-header hTitle="添加地址"></back-header>
+</ion-header>
+<ion-content>
+  <div class="address_page">
+    <section class="page_text_container">
+      <section class="section_list">
+        <span class="section_left">联系人</span>
+        <section class="section_right">
+          <input type="text" name="name" placeholder="姓名" [(ngModel)]="name" class="input_style">
+          <div class="choose_sex">
+            <span class="choose_option" (click)="chooseSex(1)" [ngClass]="{choosed: sex == 1}">先生</span>
+            <span class="choose_option" (click)="chooseSex(2)" [ngClass]="{choosed: sex == 2}">女士</span>
+          </div>
+        </section>
+      </section>
+      <section class="section_list">
+        <span class="section_left">联系电话</span>
+        <section class="section_right">
+          <div class="phone_add">
+            <input type="text" name="phone" placeholder="手机号码" [(ngModel)]="phone" class="input_style">
+            <img src="../../../../assets/imgs/add_phone.png" class="phone_add_bk" (click)="phoneBk = true">
+          </div>
+          <input *ngIf="phoneBk" type="text" name="anntherPhoneNumber" placeholder="备选电话" [(ngModel)]="anntherPhoneNumber" class="input_style phoneBk">
+        </section>
+      </section>
+      <section class="section_list">
+        <span class="section_left">送餐地址</span>
+        <section class="section_right">
+          <div class="choose_address" [routerLink]="['/address/search']">
+            <span class="address_name">{{searchAddress()? searchAddress().name : '小区/写字楼/学校等'}}</span>
+            <svg class="address_search">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
+            </svg>
+          </div>
+          <input type="text" name="address_detail" placeholder="详细地址（如门牌号等）" [(ngModel)]="addressDetail" class="input_style">
+        </section>
+      </section>
+      <section class="section_list">
+        <span class="section_left">标签</span>
+        <section class="section_right">
+          <div class="choose_tag">
+            <span class="choose_option" (click)="chooseTag('家')" [ngClass]="{choosed: tag == '家'}">家</span>
+            <span class="choose_option" (click)="chooseTag('学校')" [ngClass]="{choosed: tag == '学校'}">学校</span>
+            <span class="choose_option" (click)="chooseTag('公司')" [ngClass]="{choosed: tag == '公司'}">公司</span>
+          </div>
+        </section>
+      </section>
+    </section>
+    <div class="determine" (click)="addAddress()">确定</div>
+  </div>
+</ion-content>

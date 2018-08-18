@@ -1,0 +1,54 @@
+<ion-header>
+  <back-header hTitle="选择地址"></back-header>
+</ion-header>
+<ion-content>
+  <div class="rating_page">
+    <section id="scroll_section" class="scroll_container">
+      <section class="list_cotainer">
+        <ul class="deliverable_address">
+          <li *ngFor="let item of deliverable; index as index" (click)="chooseAddress(item, index)">
+            <div class="choosed_address" [ngClass]="{'default_address': defaultIndex() == index}">
+              <ion-checkbox color="secondary" [checked]="true"></ion-checkbox>
+            </div>
+            <div>
+              <header>
+                <span>{{item.name}}</span>
+                <span>{{item.sex == 1? '先生' : '女士'}}</span>
+                <span>{{item.phone}}</span>
+              </header>
+              <div class="address_detail ellipsis">
+                <span *ngIf="item.tag" [ngStyle]="{color: iconColor[item.tag]}">{{item.tag}}</span>
+                <p>{{item.address_detail}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <section id="out_delivery" *ngIf="deliverdisable.length">
+          <header class="out_header">以下地址超出配送范围</header>
+          <ul class="deliverable_address">
+            <li *ngFor="let item of deliverdisable;index as index">
+              <svg class="choosed_address">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select"></use>
+              </svg>
+              <div>
+                <header>
+                  <span>{{item.name}}</span>
+                  <span>{{item.sex == 1? '先生' : '女士'}}</span>
+                  <span>{{item.phone}}</span>
+                </header>
+                <div class="address_detail ellipsis">
+                  <span *ngIf="item.tag" [ngStyle]="{backgroundColor: '#ccc', color: '#fff'}">{{item.tag}}</span>
+                  <p>{{item.address_detail}}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+    <div class="add_icon_footer" [routerLink]="['/address/add']">
+      <img src="../../../assets/imgs/add_address.png" height="24" width="24">
+      <span>新增收货地址</span>
+    </div>
+  </div>
+</ion-content>

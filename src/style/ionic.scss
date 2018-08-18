@@ -1,0 +1,62 @@
+/** ion-toolbar **/
+ion-toolbar {
+  min-height: 3.3rem;
+}
+
+/** ion-title **/
+ion-title {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/** ion-back-button **/
+.back-button-native {
+  font-size: 1.2rem !important;
+}
+ion-back-button {
+  position: absolute;
+}
+.back-button-native[data-ion-back-button-md] {
+  margin-left: -1rem;
+}
+
+/** ion-content **/
+ion-content {
+  background-color: #f5f5f5;
+}
+
+/** toast **/
+.toast-container {
+  text-align: center;
+  background-color: #333;
+  border-radius: .2rem;
+}
+
+.toast-ios .toast-wrapper,
+.toast-md .toast-wrapper {
+  left: 1rem;
+  right: 1rem;
+  border-radius: 0.65rem;
+  width: auto;
+}
+
+.toast-ios .toast-message,
+.toast-md .toast-message {
+  font-size: 1rem;
+  color: #fff;
+  padding: .6rem;
+}
+
+/** infinite sroll **/
+ion-infinite-scroll-content {
+	min-height: 1px;
+}
+
+.infinite-loading {
+    margin-bottom: 0;
+}
+
+/** ion header **/
+.header-md back-icon {
+  position: absolute;
+}

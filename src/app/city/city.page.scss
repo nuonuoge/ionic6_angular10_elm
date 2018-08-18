@@ -1,0 +1,76 @@
+@import "../../style/mixin.scss";
+@import "../../style/common.scss";
+
+ion-input {
+  background-color: #fff;
+  --padding-start: .5rem;
+  --padding-end: .5rem;
+  border: 1px solid #e4e4e4;
+  color: #333;
+  font-size: 1.1rem;
+  height: 2.34rem;
+}
+
+.change_city {
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: .6rem;
+  margin: auto 0;
+  height: 1.4rem;
+}
+
+.city_form {
+  background-color: #fff;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  padding-top: .65rem;
+  .city_search {
+    margin: 0 auto .65rem auto;
+    width: 90%;
+  }
+}
+
+.button_submit {
+  width: 100%;
+  padding: 0 1.28rem .669rem 1.28rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e4e4;
+}
+.getpois_ul {
+  background-color: #fff;
+  border-top: 1px solid #e4e4e4;
+  li {
+    padding-top: 1.088rem;
+    padding-bottom: .92rem;
+    border-bottom: 1px solid #e4e4e4;
+    .pois_name {
+      font-size: 1.088rem;
+      width: 90%;
+      margin: 0 auto .586rem;
+    }
+    .pois_address {
+      font-size: .857rem;
+      width: 90%;
+      margin: 0 auto;
+      color: #999;
+    }
+  }
+}
+.pois_search_history {
+  font-size: .8rem;
+  padding-left: .8rem;
+
+}
+.search_none_place, .clear_all_history {
+  line-height: 3rem;
+  font-size: 1.1rem;
+  background-color: #fff;
+}
+.search_none_place {
+  text-indent: .85rem;
+}
+.clear_all_history {
+  text-align: center;
+}

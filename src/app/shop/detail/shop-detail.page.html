@@ -1,0 +1,63 @@
+<ion-header>
+  <back-header [hTitle]="headTitle"></back-header>
+</ion-header>
+<ion-content>
+  <section class="description_top">
+    <section class="description_header">
+      <section class="description_left">
+        <img [src]="imgBaseUrl + shopDetailData.image_path">
+      </section>
+      <section class="description_right">
+        <h4 class="description_title ellipsis">{{shopDetailData.name}}</h4>
+        <p class="description_text">
+          <rating-star [rating]="shopDetailData.rating"></rating-star>
+          <span class="rating_num">{{shopDetailData.rating.toFixed(1)}}</span>
+          <span class="order_num">月售{{shopDetailData.recent_order_num}}单</span>
+        </p>
+        <p class="description_fee_distance">
+          <span class="fee">{{shopDetailData.float_minimum_order_amount}}元起送／{{ratingScoresData.deliver_time}}分钟</span>
+          <!--<span>{{shopDetailData.distance}}</span>-->
+          <span class="delivery_mode" [ngStyle]="{'background-color':'#'+shopDetailData?.delivery_mode?.color}">{{shopDetailData?.delivery_mode?.text}}</span>
+        </p>
+      </section>
+    </section>
+    <section class="description_info">
+      <p class="float_delivery_fee">配送费： 配送费¥{{shopDetailData.float_delivery_fee}}</p>
+      <p class="promotion_info">公告： {{shopDetailData.promotion_info}}</p>
+    </section>
+  </section>
+
+  <section class="description_rating">
+    <header class="rating_header">
+      <span class="score">{{shopDetailData.rating.toFixed(1)}}分</span> 高于周边商家{{(ratingScoresData?.compare_rating*100).toFixed(1)}}%
+    </header>
+    <section class="rating_lastest">
+      <img [src]="getImgPath(rating.avatar)" class="user_avatar">
+      <section class="username_star">
+        <p class="username">{{rating.username}}</p>
+        <p class="star_desc">
+          <rating-star [rating]='rating.rating_star'></rating-star>
+        </p>
+      </section>
+      <time class="rated_at">{{rating.rated_at}}</time>
+    </section>
+    <footer class="view_more" [routerLink]="['/shop',shopDetailData.id,'evaluate']" [queryParams]="ratingParams">查看全部评价<ion-icon name="arrow-forward" class="view_arrow"></ion-icon></footer>
+  </section>
+  <section class="description_activities_supports" *ngIf="shopDetailData.activities?.length>0||shopDetailData.supports?.length>0">
+    <header class="activities_supports_header">活动与属性</header>
+    <li class="activities_li" *ngFor="let item of shopDetailData.activities">
+      <span class="activities_icon" [ngStyle]="{'background-color':'#'+item.icon_color}">{{item.icon_name}}</span>
+      <span>{{item.description}}</span>
+    </li>
+    <li class="supports_li" *ngFor="let item of shopDetailData.supports">
+      <span class="supports_icon" [ngStyle]="{'background-color':'#'+item.icon_color}">{{item.icon_name}}</span>
+      <span>{{item.description}}</span>
+    </li>
+  </section>
+  <section class="description_shop_info">
+    <header class="shop_info_header">商家信息</header>
+    <p class="elm">叫外卖，上饿了么</p>
+    <p class="address">地址：{{shopDetailData.address}}</p>
+    <p class="time">营业时间：<span *ngFor="let time of shopDetailData.opening_hours">{{time}}</span></p>
+  </section>
+</ion-content>

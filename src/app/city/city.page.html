@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <back-icon size="md"></back-icon>
+    <ion-title>{{guessCity}}</ion-title>
+    <span class="change_city" [routerLink]="['/home']">切换城市</span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="city_form">
+    <div class="city_search">
+      <ion-input clearInput type="text" placeholder="请输入学校、商务楼、地址" [(ngModel)]="search" name="search"></ion-input>
+    </div>
+    <div class="button_submit">
+      <ion-button size="small" type="button" expand="full" (click)="searchPlace()">提交</ion-button>
+    </div>
+  </form>
+  <header *ngIf="historyTitle" class="pois_search_history">搜索历史</header>
+  <ul class="getpois_ul">
+    <li *ngFor="let place of placeList" (click)="toMiste(place)">
+      <h4 class="pois_name">{{place?.name}}</h4>
+      <p class="pois_address">{{place?.address}}</p>
+    </li>
+  </ul>
+  <footer *ngIf="historyTitle&&placeList.length" class="clear_all_history" (click)="clearAll()">清空所有</footer>
+  <div class="search_none_place" *ngIf="placeNone">很抱歉！无搜索结果</div>
+</ion-content>

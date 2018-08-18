@@ -1,0 +1,70 @@
+@import "../../style/mixin.scss";
+
+ion-toggle {
+  position: absolute;
+  top: .3rem;
+  right: 1rem;
+}
+ion-button {
+  font-size: 1.2rem;
+}
+.login_content {
+  padding-top: 1rem;
+}
+.login_form {
+  background-color: #fff;
+  .input_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.33rem;
+    border-bottom: 1px solid #f1f1f1;
+    input{
+      @include sc(1.16rem, #666);
+      outline: none;
+    }
+  }
+  .input_pwd {
+    position: relative;
+  }
+  .captcha_code_container{
+    height: 3.6rem;
+    .img_change_img{
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+      img{
+        @include wh(5.8rem, 2.5rem);
+        margin-right: .34rem;
+      }
+      .change_img{
+        display: flex;
+        flex-direction: 'column';
+        flex-wrap: wrap;
+        width: 3.34rem;
+        justify-content: center;
+        p{
+          @include sc(.92rem, #666);
+        }
+        p:nth-of-type(2){
+          color: #3b95e9;
+          margin-top: .34rem;
+        }
+      }
+    }
+  }
+}
+.login_tips{
+  @include sc(.8rem, red);
+  padding: .7rem 1rem;
+  line-height: .8rem;
+}
+.button_login {
+  text-align: center;
+  margin: 1rem;
+  span {
+    color: #fff;
+  }
+}
+.show_pwd {
+  display: none;
+}

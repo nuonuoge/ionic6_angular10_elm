@@ -1,14 +1,7 @@
 {
   "name": "elm",
-  "app_id": "",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   },
-  "proxies": [
-    {
-      "path": "/",
-      "proxyUrl": "http://cangdu.org:8001"
-    }
-  ]
+  "type": "angular"
 }
