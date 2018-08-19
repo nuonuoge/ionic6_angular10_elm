@@ -47,13 +47,16 @@ npm start
 # 部分展示
 ### 登录页
 <img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/login.gif" width="320" height="568"/>
+
 ### 搜索页
 <img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/search.gif" width="320" height="568"/>
+
 ### tabs
 <img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/tabs.gif" width="320" height="568"/>
+
 ### 商铺列表页
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/msite.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/food.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/msite.gif" width="320" height="568"/>&nbsp;&nbsp;<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/food.gif" width="320" height="568"/>
+
 ### 商铺页
 <img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop1.gif" width="320" height="568"/>&nbsp;&nbsp;<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop2.gif" width="320" height="568"/>
 
