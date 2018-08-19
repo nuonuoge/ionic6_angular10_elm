@@ -44,11 +44,14 @@ npm start
 
 >  另外一个 vue2 + vuex 的elm项目，19000+star。[地址在这里](https://github.com/bailicangdu/vue2-elm)
 
-# 部分截图
+# 部分展示
 
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/login.gif" width="320" height="568"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/search.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/tabs.gif" width="320" height="568"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/msite.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/food.gif" width="320" height="568"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop1.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/login.gif" width="320" height="568" style="margin-right: 20px"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/search.gif" width="320" height="568"/>
+<br>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/tabs.gif" width="320" height="568" style="margin-right: 20px"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/msite.gif" width="320" height="568"/>
+<br>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/food.gif" width="320" height="568" style="margin-right: 20px"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop1.gif" width="320" height="568"/>
+<br>
 <img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop2.gif" width="320" height="568"/>
 
 # 目标功能
