@@ -309,7 +309,7 @@ export class ShopPage extends UserInfo implements OnInit {
       this.router.navigate(['/confirmOrder'], {queryParams: {
         geohash: this.geohash,
         shopId: this.shopId
-      }})
+      }});
     } else {
       this.router.navigate(['/login']);
     }

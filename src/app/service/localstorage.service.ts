@@ -25,6 +25,6 @@ export class LocalStorageService {
     if (!name) {
       return;
     }
-	  window.localStorage.removeItem(name);
+    window.localStorage.removeItem(name);
   }
 }

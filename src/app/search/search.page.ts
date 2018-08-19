@@ -87,7 +87,7 @@ export class SearchPage implements OnInit {
   }
 
   toShop(place: any) {
-    this.router.navigate(['msite'], { queryParams: { geohash: place.geohash } })
+    this.router.navigate(['msite'], { queryParams: { geohash: place.geohash } });
   }
 
   back() {

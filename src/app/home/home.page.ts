@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../service'
+import { DataService } from '../service';
 
 @Component({
   selector: 'page-home',

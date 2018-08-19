@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService, DataService, LocalStorageService } from '../service';
 import { UserInfo } from '../class';
-import { Subscription } from 'rxjs';
 import { ImgBaseUrl } from '../config/env';
 
 @Component({

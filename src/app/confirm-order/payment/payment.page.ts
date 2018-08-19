@@ -42,7 +42,7 @@ export class PaymentPage implements OnInit {
         {
           text: '确认',
           handler: () => {
-            this.router.navigateByUrl('/app/tab/(order:order)')
+            this.router.navigateByUrl('/app/tab/(order:order)');
           }
         }
       ]

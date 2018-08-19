@@ -25,6 +25,6 @@ export class SearchAddressPage {
   }
   choooedAddress(item: any) {
     this.appService.searchAddress = item;
-    this.router.navigate(['/address', 'add'])
+    this.router.navigate(['/address', 'add']);
   }
 }

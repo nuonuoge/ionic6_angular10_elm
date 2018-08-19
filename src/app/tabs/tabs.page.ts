@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Observable, of, from } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { flatMap, map } from 'rxjs/operators';
 
 @Component({
@@ -19,7 +19,7 @@ export class TabsPage implements AfterViewInit {
         if (ionTabElm) {
           clearInterval(clearInter);
           observer.next(ionTabElm);
-        };
+        }
       }, 200);
     })
     .pipe(
@@ -30,9 +30,9 @@ export class TabsPage implements AfterViewInit {
             if (ionTabbarElm) {
               clearInterval(clearInter);
               observer.next(ionTabbarElm);
-            };
+            }
           }, 200);
-        })
+        });
       }),
       flatMap((ionTabElm: Element) => {
         return Observable.create((observer: any) => {
@@ -41,9 +41,9 @@ export class TabsPage implements AfterViewInit {
             if (tabButtonElms) {
               clearInterval(clearInter);
               observer.next(tabButtonElms);
-            };
+            }
           }, 200);
-        })
+        });
       }),
       flatMap((tabButtonElms: NodeList) => {
         return from([tabButtonElms[0], tabButtonElms[1], tabButtonElms[2], tabButtonElms[3]]);
@@ -52,15 +52,15 @@ export class TabsPage implements AfterViewInit {
         return Observable.create((observer: any) => {
           let clearInter = setInterval(() => {
             let style = document.createElement('style');
-            style.innerHTML = ".icon { font-size: 20px; margin-top: 8px; }";
+            style.innerHTML = '.icon { font-size: 20px; margin-top: 8px; }';
             tabButtonElm.shadowRoot.appendChild(style);
             let ionElm = tabButtonElm.shadowRoot.querySelector('ion-icon');
             if (ionElm) {
               clearInterval(clearInter);
               observer.next(ionElm);
-            };
+            }
           }, 200);
-        })
+        });
       }),
       map((ionElm: Element) => {
         ionElm.classList.add('icon');

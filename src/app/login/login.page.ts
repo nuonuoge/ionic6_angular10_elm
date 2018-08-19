@@ -65,7 +65,7 @@ export class LoginPage implements OnInit {
       } else {
         this.storageService.setStore('userId', res.user_id);
         this.appService.userInfoEvent.emit('update');
-        this.location.back(); 
+        this.location.back();
       }
     });
   }

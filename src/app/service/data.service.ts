@@ -30,7 +30,7 @@ export class DataService {
         }
         return sortCities;
       })
-    )
+    );
   }
 
   getCityById(id: string): any {

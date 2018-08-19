@@ -115,7 +115,7 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
   }
 
   toRemarkPage() {
-    this.router.navigate(['/confirmOrder', 'remark'], { queryParams: { id: this.checkoutData.cart.id, sig: this.checkoutData.sig } })
+    this.router.navigate(['/confirmOrder', 'remark'], { queryParams: { id: this.checkoutData.cart.id, sig: this.checkoutData.sig } });
   }
 
   async toastTip(message: string) {

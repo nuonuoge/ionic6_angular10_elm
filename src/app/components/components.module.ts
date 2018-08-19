@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { BackHeaderComponent } from './back/back-header';
 import { BackIconComponent } from './back/back-icon';
 import { BuyCartComponent } from './buy-cart/buy-cart';
-import { ElmSvgComponent } from './svg/svg'
+import { ElmSvgComponent } from './svg/svg';
 import { LoginHeaderComponent } from './login-header/login-header';
 import { LoadingComponent } from './loading/loading';
 import { RatingStarComponent } from './rating-star/rating-star';
@@ -17,7 +17,7 @@ import { ShopMsiteComponent } from './shop/msite/shop-msite';
 import { ShopEvaluateComponent } from './shop/evaluate/evaluate';
 
 // import { DirectivesModule } from '../directives';
-const coms: any[] =[
+const coms: any[] = [
   BackHeaderComponent,
   BackIconComponent,
   BuyCartComponent,
@@ -29,7 +29,7 @@ const coms: any[] =[
   ShopSearchComponent,
   ShopMsiteComponent,
   ShopEvaluateComponent
-]
+];
 
 @NgModule({
   imports: [
@@ -46,4 +46,4 @@ const coms: any[] =[
   ],
   entryComponents: [],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

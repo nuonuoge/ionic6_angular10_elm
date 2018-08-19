@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styles: [`
     ion-icon {
       font-size: 1.4rem;
-      margin: auto 0; 
+      margin: auto 0;
     }
   `]
 })
@@ -14,8 +14,8 @@ export class BackIconComponent {
   _size: number = 2;
   @Input() set size(val: string) {
     if (val === 'md') {
-      this._size = 2
-    } else if(val === 'sm') {
+      this._size = 2;
+    } else if (val === 'sm') {
       this._size = 1.4;
     }
   }

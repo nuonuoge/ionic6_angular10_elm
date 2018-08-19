@@ -6,7 +6,7 @@ import { DataService, ShopService } from '../../../service';
   templateUrl: 'evaluate.html',
   styleUrls: ['evaluate.scss']
 })
-export class ShopEvaluateComponent{
+export class ShopEvaluateComponent {
   @Input() shopId: string;
   @Input() rating: string;
   ratingList: any; // 评价列表

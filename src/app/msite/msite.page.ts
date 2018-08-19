@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService, DataService } from '../service';
 
@@ -31,8 +31,7 @@ export class MsitePage implements OnInit {
     public route: ActivatedRoute,
     public router: Router,
     public appService: AppService,
-    public dataService: DataService,
-    public zone: NgZone) {
+    public dataService: DataService) {
     this.geohash = this.route.snapshot.queryParamMap.get('geohash');
     this.offset = 0;
     this.shopList = [];
