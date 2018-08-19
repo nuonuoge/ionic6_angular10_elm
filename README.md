@@ -14,13 +14,13 @@ v3到v4是一个跨越性的升级，花费了两周左右的业余时间进行�
 ```
 npm install -g cordova ionic // 需要全局安装cordova ionic
 
-git clone https://github.com/nuonuoge/ionic4_angular5_elm.git  
+git clone https://github.com/nuonuoge/ionic4_angular6_elm.git  
 
-cd ionic4_angular5_elm
+cd ionic4_angular6_elm
 
 npm install
 
-ionic serve
+npm start
 
 ```
 ## 另外
