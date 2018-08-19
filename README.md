@@ -1,5 +1,6 @@
 # ionic4_angular6_elm
-基于ionic4 + ng6 构建一个具有 30+ 页面的大型单页面应用（必须使用ionic v4）
+基于ionic4 + ng6 构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v4）
+
 v3到v4是一个跨越性的升级，花费了两周左右的业余时间进行升级，坑还是很多的，而且v4目前还处于beta版本，有很多bug，比如[ionic tabs组件存在路由导航bug](https://github.com/ionic-team/ionic/issues/15054)，官方正在解决中，急用的小伙伴最好自己实现一个tabs，这次v3升级v4最大的感触就是没有使用ionic组件的部分代价最小，使用v4开发和pc端ng开发已无任何区别，v4采用了shadow dom，修改样式需要使用v4暴露出来的属性，未暴露的则需要自己通过js获取shadow dom强行修改，因为shadow 和 deep等刺穿shadow dom的方法目前已经废弃
 
 基于ionic3 + ng5 构建一个具有 30+ 页面的大型单页面应用(请使用v3分支，必须使用ionic v3才能启动)
