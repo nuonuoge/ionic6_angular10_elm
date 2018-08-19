@@ -46,12 +46,9 @@ npm start
 
 # 部分截图
 
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/login.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/search.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/tabs.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/msite.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/food.gif" width="320" height="568"/>
-<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop1.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/login.gif" width="320" height="568"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/search.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/tabs.gif" width="320" height="568"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/msite.gif" width="320" height="568"/>
+<img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/food.gif" width="320" height="568"/><img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop1.gif" width="320" height="568"/>
 <img src="https://github.com/nuonuoge/ionic4_angular5_elm/blob/master/screenshots/shop2.gif" width="320" height="568"/>
 
 # 目标功能
