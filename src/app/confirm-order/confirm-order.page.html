@@ -2,8 +2,8 @@
   <back-header hTitle="确认订单"></back-header>
 </ion-header>
 <ion-content>
-  <div class="confirmOrderContainer">
-    <section *ngIf="!showLoading" class="order_detail">
+  <div class="confirmOrderContainer" *ngIf="!showLoading">
+    <section class="order_detail">
       <div class="address_container" [routerLink]="['/confirmOrder/chooseAddress']">
         <div class="address_empty_left">
           <div class="add_address" *ngIf="!choosedAddress()">请添加一个收货地址</div>
