@@ -37,33 +37,19 @@ export class TabsPage implements AfterViewInit {
       flatMap((ionTabElm: Element) => {
         return Observable.create((observer: any) => {
           let clearInter = setInterval(() => {
-            let tabButtonElms = ionTabElm.shadowRoot.querySelectorAll('ion-tab-button');
-            if (tabButtonElms) {
+            let iconElms = ionTabElm.shadowRoot.querySelectorAll('ion-icon');
+            if (iconElms) {
               clearInterval(clearInter);
-              observer.next(tabButtonElms);
+              observer.next(iconElms);
             }
           }, 200);
         });
       }),
-      flatMap((tabButtonElms: NodeList) => {
-        return from([tabButtonElms[0], tabButtonElms[1], tabButtonElms[2], tabButtonElms[3]]);
-      }),
-      flatMap((tabButtonElm: Element) => {
-        return Observable.create((observer: any) => {
-          let clearInter = setInterval(() => {
-            let style = document.createElement('style');
-            style.innerHTML = '.icon { font-size: 20px; margin-top: 8px; }';
-            tabButtonElm.shadowRoot.appendChild(style);
-            let ionElm = tabButtonElm.shadowRoot.querySelector('ion-icon');
-            if (ionElm) {
-              clearInterval(clearInter);
-              observer.next(ionElm);
-            }
-          }, 200);
+      map((iconElms: NodeList) => {
+        Array.from(iconElms).forEach((iconElm:any) => {
+          iconElm.style.fontSize = '20px';
+          iconElm.style.marginTop = '8px';
         });
-      }),
-      map((ionElm: Element) => {
-        ionElm.classList.add('icon');
       })
     )
     .subscribe(res => {
