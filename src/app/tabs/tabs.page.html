@@ -1,14 +1,63 @@
-<ion-tabs>
-  <ion-tab label="外卖" icon="assets/icon/elm.svg" href="/app/tab/(msite:msite)">
-    <ion-router-outlet name="msite"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab label="搜索" icon="assets/icon/find.svg" href="/app/tab/(search:search)">
-    <ion-router-outlet name="search"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab tabsHideOnSubPages="true" label="订单" icon="assets/icon/order.svg" href="/app/tab/(order:order)">
-    <ion-router-outlet name="order"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab label="我的" icon-size="small" icon="assets/icon/mine.svg" href="/app/tab/(profile:profile)">
-    <ion-router-outlet name="profile"></ion-router-outlet>
-  </ion-tab>
-</ion-tabs>
+<TabBar [barTintColor]="'white'" [tintColor]="tintColor" [unselectedTintColor]="unselectedTintColor" [ngStyle]="tabbarStyle"
+  [activeTab]="currentTab-1" [hidden]="hidden" [tabBarPosition]="topFlag ? 'top' : 'bottom'">
+  <TabPane [title]='custom1'>
+    <ng-template #custom1>
+      <TabBarTab [title]="'外卖'" [key]="1" [badge]="6" [icon]="icon1" [selectedIcon]="iconselected1" (onPress)="onPress($event)">
+        <ng-template #icon1>
+          <div style="width:22px;height: 22px;background: url('assets/icon/elm.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #iconselected1>
+          <div style="width:22px;height: 22px;background: url('assets/icon/elm_active.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <router-outlet *ngIf="1 === currentTab"></router-outlet>
+  </TabPane>
+  <TabPane [title]='custom2'>
+    <ng-template #custom2>
+      <TabBarTab [title]="'搜索'" [key]="2" [icon]="icon2" [selectedIcon]="iconselected2" (onPress)="onPress($event)">
+        <ng-template #icon2>
+          <div style="width:22px;height: 22px;background: url('assets/icon/find.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #iconselected2>
+          <div style="width:22px;height: 22px;background: url('assets/icon/find_active.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <router-outlet *ngIf="2 === currentTab"></router-outlet>
+  </TabPane>
+  <TabPane [title]='custom3'>
+    <ng-template #custom3>
+      <TabBarTab [title]="'订单'" [key]="3" [dot]="true" [icon]="icon3" [selectedIcon]="iconselected3" (onPress)="onPress($event)">
+        <ng-template #icon3>
+          <div style="width:22px;height: 22px;background: url('assets/icon/order.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #iconselected3>
+          <div style="width:22px;height: 22px;background: url('assets/icon/order_active.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <router-outlet *ngIf="3 === currentTab"></router-outlet>
+  </TabPane>
+  <TabPane [title]='custom4'>
+    <ng-template #custom4>
+      <TabBarTab [title]="'我的'" [key]="4" [dot]="true" [icon]="icon4" [selectedIcon]="iconselected4" (onPress)="onPress($event)">
+        <ng-template #icon4>
+          <div style="width:22px;height: 22px;background: url('assets/icon/mine.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #iconselected4>
+          <div style="width:22px;height: 22px;background: url('assets/icon/mine_svg.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <router-outlet *ngIf="4 === currentTab"></router-outlet>
+  </TabPane>
+</TabBar>

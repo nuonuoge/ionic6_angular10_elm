@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 import { ComponentsModule } from '../components';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ComponentsModule } from '../components';
     CommonModule,
     FormsModule,
     IonicModule,
-    ComponentsModule
+    ComponentsModule,
+    NgZorroAntdMobileModule
   ],
   entryComponents: [],
 })
