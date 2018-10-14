@@ -16,7 +16,7 @@ export class TabsPage {
     top: 0
   };
   constructor(public router: Router) {
-    this.getCurrentTab()
+    this.getCurrentTab();
   }
 
   getCurrentTab() {
