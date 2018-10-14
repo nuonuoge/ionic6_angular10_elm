@@ -26,7 +26,7 @@ export class MsitePage implements OnInit {
   touchend: boolean;
   showLoading: boolean;
   preventRepeatReuqest: boolean = false; // 到达底部加载数据，防止重复加载
-
+  dtPullToRefreshStyle = { height: '100%' };
   constructor(
     public route: ActivatedRoute,
     public router: Router,
@@ -113,7 +113,6 @@ export class MsitePage implements OnInit {
 
   loaderMore(event: any) {
     if (this.touchend) {
-      event.target.disabled = true;
       return;
     }
     if (this.preventRepeatReuqest) {
@@ -123,6 +122,5 @@ export class MsitePage implements OnInit {
     this.showLoading = true;
     this.preventRepeatReuqest = true;
     this.getShopList();
-    event.target.complete();
   }
 }

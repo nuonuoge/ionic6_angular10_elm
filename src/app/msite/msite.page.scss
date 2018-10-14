@@ -1,8 +1,8 @@
 @import "../../style/mixin.scss";
 @import "../../style/common.scss";
-ion-icon {
-	font-size: 2rem;
-  vertical-align: middle;
+.content {
+	height: calc(100% - 45px);
+	overflow: scroll;
 }
 .msite_nav{
 	background-color: #fff;
@@ -43,6 +43,8 @@ ion-icon {
 	border-top: .041rem solid $bc;
 	background-color: #fff;
 	.shop_header{
+		display: flex;
+		align-items: center;
 		.shop_icon{
 			fill: #999;
 			margin-left: 1rem;
@@ -50,6 +52,7 @@ ion-icon {
 			@include wh(1rem, 1rem);
 		}
 		.shop_header_title{
+			margin-left: .6rem;
 			color: #999;
 			@include font(.92rem, 2.7rem);
 		}
