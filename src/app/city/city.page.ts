@@ -83,6 +83,6 @@ export class CityPage implements OnInit {
   toMiste(place: any) {
     this.setSearchStorage(place);
     this.appService.geohash = place.geohash;
-    this.router.navigateByUrl('/app/tab/(msite:msite)?geohash=' + place.geohash);
+    this.router.navigate(['/app/tab/msite'], {queryParams: {geohash: place.geohash}});
   }
 }

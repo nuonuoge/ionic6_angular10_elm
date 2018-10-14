@@ -1,11 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <span class="head_logo">ele.me</span>
-    <login-header></login-header>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<Navbar [leftContent]="'ele.me'" [rightContent]="loginheader"></Navbar>
+<ng-template #loginheader>
+  <login-header></login-header>
+</ng-template>
+<div class="page_content">
   <nav class="city_nav">
     <div class="city_tip">
       <span>当前定位城市</span>
@@ -36,4 +33,4 @@
       </li>
     </ul>
   </section>
-</ion-content>
+</div>

@@ -47,3 +47,12 @@ input:-webkit-autofill:focus {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.page_content {
+  height: 100%;
+  overflow: scroll;
+}
+
+.am-navbar-title {
+  max-width: 50%;
+}

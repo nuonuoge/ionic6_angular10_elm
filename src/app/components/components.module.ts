@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 
 import { BackHeaderComponent } from './back/back-header';
 import { BackIconComponent } from './back/back-icon';
@@ -37,6 +38,7 @@ const coms: any[] = [
     FormsModule,
     RouterModule,
     IonicModule.forRoot(),
+    NgZorroAntdMobileModule
   ],
   declarations: [
     coms
