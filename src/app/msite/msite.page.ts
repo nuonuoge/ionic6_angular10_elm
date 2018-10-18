@@ -12,7 +12,6 @@ export class MsitePage implements OnInit {
   geohash: string;
   addressTitle: string;
   foodTypes: any[];
-  slideActive: boolean;
   imgBaseUrl = 'https://fuss10.elemecdn.com';
   params: any;
   foodParams: any;
@@ -27,6 +26,7 @@ export class MsitePage implements OnInit {
   showLoading: boolean;
   preventRepeatReuqest: boolean = false; // 到达底部加载数据，防止重复加载
   dtPullToRefreshStyle = { height: '100%' };
+
   constructor(
     public route: ActivatedRoute,
     public router: Router,
@@ -100,11 +100,6 @@ export class MsitePage implements OnInit {
       foodArr[j] = array.splice(0, spliceLength);
     }
     return foodArr;
-  }
-
-  slideChanged(val: any) {
-    let slideIndex = val.getActiveIndex();
-    this.slideActive = slideIndex % 2 !== 0;
   }
 
   toSearch() {
