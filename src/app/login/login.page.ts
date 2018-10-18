@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
-import { ToastController } from '@ionic/angular';
+import { Toast } from 'ng-zorro-antd-mobile';
 import { AppService, DataService, LocalStorageService } from '../service';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.page.html',
-  styleUrls: ['login.page.scss']
+  styleUrls: ['login.page.scss'],
+  providers: [Toast]
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, OnDestroy {
   userName: string;
   userPwd: string;
   showPwd: boolean;
@@ -19,7 +20,7 @@ export class LoginPage implements OnInit {
     public appService: AppService,
     public dataService: DataService,
     public storageService: LocalStorageService,
-    public toastCtrl: ToastController) {
+    private _toast: Toast) {
   }
 
   ngOnInit() {
@@ -36,13 +37,8 @@ export class LoginPage implements OnInit {
     });
   }
 
-  async toastTip(message: string) {
-    let toast = await this.toastCtrl.create({
-        message: message,
-        duration: 2000,
-        position: 'middle'
-      });
-    toast.present();
+  toastTip(message: string) {
+    Toast.show(message, 2000);
   }
 
   logIn() {
@@ -68,5 +64,9 @@ export class LoginPage implements OnInit {
         this.location.back();
       }
     });
+  }
+
+  ngOnDestroy() {
+    Toast.hide();
   }
 }
