@@ -1,8 +1,10 @@
-<ion-header>
-  <back-header [hTitle]="headTitle"></back-header>
-</ion-header>
-
-<ion-content>
+<ng-template #leftContent>
+  <back-icon></back-icon>
+</ng-template>
+<Navbar [leftContent]="leftContent" [rightContent]="rightContent">
+  <span class="ellipsis">{{headTitle}}</span>
+</Navbar>
+<div class="page_content">
   <section class="sort_container">
     <div class="sort_item" [ngClass]="{'choose_type':sortBy == 'food'}">
       <div class="sort_item_container" (click)="chooseType('food')">
@@ -173,12 +175,11 @@
     </div>
   </section>
   <div class="back_cover" [hidden]="!sortBy"></div>
-  <div class="shop_list_container">
-    <shop-list *ngIf="latitude" [type]="'msite'" [shopList]="shopList" [geohash]="geohash"></shop-list>
-    <p *ngIf="touchend" class="empty_data">没有更多了</p>
-    <loading [hidden]="!showLoading"></loading>
-  </div>
-  <ion-infinite-scroll threshold="20px" (ionInfinite)="loaderMore($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</ion-content>
+  <PullToRefresh [ngStyle]="dtPullToRefreshStyle" [direction]="'up'" (onRefresh)="loaderMore($event)">
+    <div class="shop_list_container">
+      <shop-list *ngIf="latitude" [type]="'msite'" [shopList]="shopList" [geohash]="geohash"></shop-list>
+      <p *ngIf="touchend" class="empty_data">没有更多了</p>
+      <loading [hidden]="!showLoading"></loading>
+    </div>
+  </PullToRefresh>
+</div>

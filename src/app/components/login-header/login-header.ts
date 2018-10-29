@@ -9,6 +9,7 @@ import { UserInfo } from '../../class';
   styleUrls: ['login-header.scss']
 })
 export class LoginHeaderComponent extends UserInfo {
+  user: any = 'user';
   constructor(public router: Router,
     public localStorageService: LocalStorageService,
     public appService: AppService) {

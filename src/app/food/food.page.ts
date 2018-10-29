@@ -29,6 +29,7 @@ export class FoodPage implements OnInit {
   touchend: boolean;
   showLoading: boolean;
   preventRepeatReuqest: boolean = false; // 到达底部加载数据，防止重复加载
+  dtPullToRefreshStyle = { height: 'calc(100% - 2.67rem - 45px)' };
 
   constructor(
     public route: ActivatedRoute,
@@ -206,7 +207,6 @@ export class FoodPage implements OnInit {
 
   loaderMore(event: any) {
     if (this.touchend) {
-      event.target.disabled = true;
       return;
     }
     if (this.preventRepeatReuqest) {
@@ -216,7 +216,6 @@ export class FoodPage implements OnInit {
     this.showLoading = true;
     this.preventRepeatReuqest = true;
     this.getShopList(true);
-    event.target.complete();
   }
 
   test() {
