@@ -11,27 +11,14 @@ ion-input {
   height: 2.34rem;
 }
 
+.city_search {
+  margin: .65rem 0;
+}
+
 .change_city {
   font-size: 1rem;
 }
 
-.city_form {
-  background-color: #fff;
-  border-top: 1px solid #e4e4e4;
-  border-bottom: 1px solid #e4e4e4;
-  padding-top: .65rem;
-  .city_search {
-    margin: 0 auto .65rem auto;
-    width: 90%;
-  }
-}
-
-.button_submit {
-  width: 100%;
-  padding: 0 1.28rem .669rem 1.28rem;
-  background-color: #fff;
-  border-bottom: 1px solid #e4e4e4;
-}
 .getpois_ul {
   background-color: #fff;
   border-top: 1px solid #e4e4e4;

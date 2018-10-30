@@ -6,14 +6,9 @@
   <span class="change_city" [routerLink]="['/home']">切换城市</span>
 </ng-template>
 <div class="page_content">
-  <form class="city_form">
-    <div class="city_search">
-      <ion-input clearInput type="text" placeholder="请输入学校、商务楼、地址" [(ngModel)]="search" name="search"></ion-input>
-    </div>
-    <div class="button_submit">
-      <ion-button size="small" type="button" expand="full" (click)="searchPlace()">提交</ion-button>
-    </div>
-  </form>
+  <div class="city_search">
+      <SearchBar [placeholder]="'请输入学校、商务楼、地址'" (onSubmit)="searchPlace($event)" (onCancel)="cancelSearch()"></SearchBar>
+  </div>
   <header *ngIf="historyTitle" class="pois_search_history">搜索历史</header>
   <ul class="getpois_ul">
     <li *ngFor="let place of placeList" (click)="toMiste(place)">

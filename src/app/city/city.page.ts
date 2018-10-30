@@ -8,7 +8,6 @@ import { AppService, DataService, LocalStorageService } from '../service';
   styleUrls: ['city.page.scss']
 })
 export class CityPage implements OnInit {
-  search: string;
   guessCity: string;
   guessCityId: string;
   placeList: any[];
@@ -23,7 +22,6 @@ export class CityPage implements OnInit {
     public storageService: LocalStorageService) {
     this.guessCityId = this.route.snapshot.paramMap.get('id');
     this.guessCity = '';
-    this.search = '';
     this.placeList = [];
     this.placeHistory = [];
     this.historyTitle = true;
@@ -31,6 +29,10 @@ export class CityPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getPlaceHistory();
+  }
+
+  getPlaceHistory() {
     if (this.storageService.getStore('placeHistory')) {
       this.placeList = JSON.parse(this.storageService.getStore('placeHistory'));
     } else {
@@ -64,15 +66,19 @@ export class CityPage implements OnInit {
     this.storageService.setStore('placeHistory', this.placeHistory);
   }
 
-  searchPlace() {
-    if (!this.search) {
+  searchPlace(text: string) {
+    if (!text) {
       return;
     }
     this.historyTitle = false;
-    this.dataService.searchPlace(this.guessCityId, this.search).subscribe(res => {
+    this.dataService.searchPlace(this.guessCityId, text).subscribe(res => {
       this.placeList = res;
       this.placeNone = res.length ? false : true;
     });
+  }
+
+  cancelSearch() {
+    this.getPlaceHistory();
   }
 
   clearAll() {
