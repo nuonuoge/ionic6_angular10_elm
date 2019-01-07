@@ -44,7 +44,7 @@ npm start
 
 >  推荐一个 react + redux 开源项目，对react感兴趣的朋友赶紧去看看。[地址在这里](https://github.com/bailicangdu/react-pxq)
 
->  另外一个 vue2 + vuex 的elm项目，19000+star。[地址在这里](https://github.com/bailicangdu/vue2-elm)
+>  另外一个 vue2 + vuex 的elm项目。[地址在这里](https://github.com/bailicangdu/vue2-elm)
 
 # 部分展示
 ### 登录页
