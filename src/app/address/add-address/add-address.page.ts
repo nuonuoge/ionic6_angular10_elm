@@ -13,6 +13,7 @@ export class AddAddressPage extends UserInfo {
   name: string = null; // 姓名
   sex: number = 1; // 性别
   phone: string = null; // 电话
+  phoneBk: boolean = false; // 备用电话
   addressDetail: string = null; // 详细地址
   tag: string = ''; // 备注
   tagType: number = 1; // 备注类型

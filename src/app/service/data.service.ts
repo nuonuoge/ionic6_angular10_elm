@@ -237,5 +237,19 @@ export class DataService {
     return this.http.get('/v1/user', { params: params });
   }
 
+  /**
+ * 重新发送订单验证码
+ */
+
+  getPayRequest(merchantOrderNo, userId): any {
+    let params = new HttpParams()
+      .set('merchantId', '5')
+      .set('merchantOrderNo', merchantOrderNo)
+      .set('source', 'MOBILE_WAP')
+      .set('userId', userId)
+      .set('version', '1.0.0');
+    return this.http.get('/payapi/payment/queryOrder', { params: params });
+  }
+
 }
 
