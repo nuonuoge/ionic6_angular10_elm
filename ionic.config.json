@@ -1,7 +1,5 @@
 {
-  "name": "elm",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "myApp",
+  "integrations": {},
   "type": "angular"
 }

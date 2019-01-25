@@ -3,7 +3,7 @@
 
 [阿里移动端组件库ng-zorro-antd-mobile开源地址](https://github.com/NG-ZORRO/ng-zorro-antd-mobile)，将在zorro分支逐步使用zorro-antd-mobile组件替换重构，感兴趣的可以直接使用zorro分支（重构中，未完成）
 
-v3到v4是一个跨越性的升级，花费了两周左右的业余时间进行升级，坑还是很多的，而且v4目前还处于beta版本，有很多bug，比如[ionic tabs组件存在路由导航bug](https://github.com/ionic-team/ionic/issues/15054)，官方正在解决中，急用的小伙伴最好自己实现一个tabs，这次v3升级v4最大的感触就是没有使用ionic组件的部分代价最小，使用v4开发和pc端ng开发已无任何区别，v4采用了shadow dom，修改样式需要使用v4暴露出来的属性，未暴露的则需要自己通过js获取shadow dom强行修改，因为shadow 和 deep等刺穿shadow dom的方法目前已经废弃
+master已升级到v4正式版
 
 基于ionic3 + ng5 构建一个具有 30+ 页面的大型单页面应用(请使用v3分支，必须使用ionic v3才能启动)
 借鉴了[@bailicangdu](https://github.com/bailicangdu/vue2-elm) vue-elm项目，已征得其本人同意，[后台传送地址](https://github.com/bailicangdu/node-elm)
