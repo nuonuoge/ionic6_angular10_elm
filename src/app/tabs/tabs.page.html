@@ -1,14 +1,23 @@
 <ion-tabs>
-  <ion-tab label="外卖" icon="assets/icon/elm.svg" href="/app/tab/(msite:msite)">
-    <ion-router-outlet name="msite"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab label="搜索" icon="assets/icon/find.svg" href="/app/tab/(search:search)">
-    <ion-router-outlet name="search"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab tabsHideOnSubPages="true" label="订单" icon="assets/icon/order.svg" href="/app/tab/(order:order)">
-    <ion-router-outlet name="order"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab label="我的" icon-size="small" icon="assets/icon/mine.svg" href="/app/tab/(profile:profile)">
-    <ion-router-outlet name="profile"></ion-router-outlet>
-  </ion-tab>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="msite">
+      <ion-icon src="assets/icon/elm.svg"></ion-icon>
+      <ion-label>外卖</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon src="assets/icon/find.svg"></ion-icon>
+      <ion-label>搜索</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="order">
+      <ion-icon src="assets/icon/order.svg"></ion-icon>
+      <ion-label>订单</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon src="assets/icon/mine.svg"></ion-icon>
+      <ion-label>我的</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
 </ion-tabs>

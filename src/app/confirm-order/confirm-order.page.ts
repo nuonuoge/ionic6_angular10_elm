@@ -38,8 +38,8 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
   }
 
   getValues(obj: any) {
-    let values = [];
-    let keys = Object.keys(obj);
+    const values = [];
+    const keys = Object.keys(obj);
     keys.forEach(key => {
       values.push(obj[key]);
     });
@@ -68,12 +68,12 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
 
   ngOnInit() {
     this.imgBaseUrl = ImgBaseUrl;
-    let initCart = this.localStorageService.getStore('buyCart');
+    const initCart = this.localStorageService.getStore('buyCart');
     if (initCart) {
       this.cartService.cartList = JSON.parse(initCart);
       this.shopCart = this.cartService.cartList[this.shopId];
     }
-    let newArr = new Array;
+    const newArr = new Array;
     this.getValues(this.shopCart).forEach(categoryItem => {
       this.getValues(categoryItem).forEach(itemValue => {
         this.getValues(itemValue).forEach(item => {
@@ -103,7 +103,7 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
   initAddress() {
     if (this.userId) {
       this.dataService.getAddressList(this.userId).subscribe(res => {
-        let addressRes = res;
+        const addressRes = res;
         if (addressRes instanceof Array && addressRes.length) {
           this.appService.choosedAddress = { address: addressRes[0], index: 0 };
         }
@@ -119,7 +119,7 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
   }
 
   async toastTip(message: string) {
-    let toast = await this.toastCtrl.create({
+    const toast = await this.toastCtrl.create({
       message: message,
       duration: 2000,
       position: 'middle'
@@ -130,7 +130,7 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
   // 确认订单
   confirmOrder() {
     // 用户未登录时弹出提示框
-    let userId = this.localStorageService.getStore('userId');
+    const userId = this.localStorageService.getStore('userId');
     if (!userId) {
       this.router.navigate(['/login']);
       return;
@@ -142,7 +142,7 @@ export class ConfirmOrderPage extends UserInfo implements OnInit {
     // 发送订单信息
     this.dataService.placeOrders(userId, this.checkoutData.cart.id, this.choosedAddress().id,
       this.remarkList(), this.checkoutData.cart.groups, this.geohash, this.checkoutData.sig).subscribe(res => {
-        let orderRes = res;
+        const orderRes = res;
         // 第一次下单的手机号需要进行验证，否则直接下单成功
         if (orderRes.need_validation) {
         } else {

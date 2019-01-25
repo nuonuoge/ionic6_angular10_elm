@@ -45,8 +45,8 @@ export class CityPage implements OnInit {
   }
 
   setSearchStorage(place: any) {
-    let history = this.storageService.getStore('placeHistory');
-    let choosePlace = place;
+    const history = this.storageService.getStore('placeHistory');
+    const choosePlace = place;
     if (history) {
       let checkrepeat = false;
       this.placeHistory = JSON.parse(history);
@@ -83,6 +83,6 @@ export class CityPage implements OnInit {
   toMiste(place: any) {
     this.setSearchStorage(place);
     this.appService.geohash = place.geohash;
-    this.router.navigateByUrl('/app/tab/(msite:msite)?geohash=' + place.geohash);
+    this.router.navigateByUrl('/tabs/msite?geohash=' + place.geohash);
   }
 }

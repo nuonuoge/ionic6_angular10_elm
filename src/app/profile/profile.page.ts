@@ -45,7 +45,7 @@ export class ProfilePage extends UserInfo implements OnDestroy, OnInit {
   }
 
   public toOrderPage() {
-    this.router.navigateByUrl('/app/tab/(order:order)');
+    this.router.navigateByUrl('/tabs/order');
   }
 
 }

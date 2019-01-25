@@ -82,7 +82,7 @@ export class ShopPage extends UserInfo implements OnInit {
   }
 
   initCart() {
-    let initCart = this.localStorageService.getStore('buyCart');
+    const initCart = this.localStorageService.getStore('buyCart');
     if (initCart) {
       this.cartService.cartList = JSON.parse(initCart);
       this.shopCart = { ...this.cartService.cartList[this.shopId] };
@@ -101,7 +101,7 @@ export class ShopPage extends UserInfo implements OnInit {
   }
 
   initCategoryNum() {
-    let newArr = [];
+    const newArr = [];
     let cartFoodNum = 0;
     this.totalPrice = 0;
     this.cartFoodList = [];
@@ -110,7 +110,7 @@ export class ShopPage extends UserInfo implements OnInit {
         let num = 0;
         Object.keys(this.shopCart[item.foods[0].category_id]).forEach(itemid => {
           Object.keys(this.shopCart[item.foods[0].category_id][itemid]).forEach(foodid => {
-            let foodItem = this.shopCart[item.foods[0].category_id][itemid][foodid];
+            const foodItem = this.shopCart[item.foods[0].category_id][itemid][foodid];
             num += foodItem.num;
             if (item.type === 1) {
               this.totalPrice += foodItem.num * foodItem.price;
@@ -266,13 +266,13 @@ export class ShopPage extends UserInfo implements OnInit {
   }
 
   animationStarted(event) {
-    let el = event.element;
+    const el = event.element;
     el.style.transform = `translate3d(0,${29 + this.elBottom - this.windowHeight}px,0)`;
     el.children[0].style.transform = `translate3d(${this.elLeft - 22}px,0,0)`;
     el.children[0].style.opacity = 0;
   }
   animationDone(event: any, index: number) {
-    let el = event.element;
+    const el = event.element;
     el.style.transform = `translate3d(0,0,0)`;
     el.children[0].style.transform = `translate3d(0,0,0)`;
     el.style.transition = 'transform .55s cubic-bezier(0.3, -0.25, 0.7, -0.15)';
@@ -295,7 +295,7 @@ export class ShopPage extends UserInfo implements OnInit {
   listenInCart() {
     if (!this.receiveInCart) {
       this.receiveInCart = true;
-      let el = this.el.nativeElement.getElementsByClassName('cart_icon_container')[0];
+      const el = this.el.nativeElement.getElementsByClassName('cart_icon_container')[0];
       el.addEventListener('animationend', () => {
         this.receiveInCart = false;
       });

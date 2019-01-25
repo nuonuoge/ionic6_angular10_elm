@@ -16,6 +16,6 @@ export class LoginHeaderComponent extends UserInfo {
   }
 
   public toProfile() {
-    this.router.navigateByUrl('/app/tab/(profile:profile)');
+    this.router.navigateByUrl('/tabs/profile');
   }
 }

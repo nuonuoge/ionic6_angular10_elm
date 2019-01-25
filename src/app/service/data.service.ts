@@ -22,7 +22,7 @@ export class DataService {
   getGroupCity(): any {
     return this.getCity('group').pipe(
       map(res => {
-        let sortCities = [];
+        const sortCities = [];
         for (let i = 65; i <= 90; i++) {
           if (res[String.fromCharCode(i)]) {
             sortCities.push({ letter: String.fromCharCode(i), cities: res[String.fromCharCode(i)] });
@@ -39,7 +39,7 @@ export class DataService {
 
   searchPlace(cityId: string, keyword: string): any {
     //  HttpParams是一个不可变对象，每次set都会返回一个新的对象，所以需要链式调用
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('type', 'search')
       .set('city_id', cityId)
       .set('keyword', keyword);
@@ -51,7 +51,7 @@ export class DataService {
   }
 
   getMsiteFoodTypes(geohash: string): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('geohash', geohash)
       .set('group_type', '1')
       .set('flags[]', 'F');
@@ -59,7 +59,7 @@ export class DataService {
   }
 
   searchRestaurant(geohash: string, searchValue: string): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('extras[]', 'restaurant_activity')
       .set('geohash', geohash)
       .set('keyword', searchValue)
@@ -74,7 +74,7 @@ export class DataService {
         supportStr += '&support_ids[]=' + item.id;
       }
     });
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('latitude', latitude)
       .set('longitude', longitude)
       .set('offset', offset)
@@ -100,7 +100,7 @@ export class DataService {
   /* 获取food页面的 category 种类列表 */
 
   getFoodCategory(latitude, longitude): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('latitude', latitude)
       .set('longitude', longitude);
     return this.http.get('/shopping/v2/restaurant/category', { params: params });
@@ -109,7 +109,7 @@ export class DataService {
   /*  获取food页面的配送方式 */
 
   getFoodDelivery(latitude, longitude): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('latitude', latitude)
       .set('longitude', longitude)
       .set('kw', '');
@@ -120,7 +120,7 @@ export class DataService {
   /* 获取food页面的商家属性活动列表 */
 
   getFoodActivity(latitude, longitude): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('latitude', latitude)
       .set('longitude', longitude)
       .set('kw', '');
@@ -129,21 +129,21 @@ export class DataService {
 
   /* 获取shop页面商铺详情 */
   getShopDetails(shopId: string, latitude: string, longitude: string): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('latitude', latitude)
       .set('longitude', longitude + '&extras[]=activities&extras[]=album&extras[]=license&extras[]=identification&extras[]=statistics');
     return this.http.get('/shopping/restaurant/' + shopId, { params: params });
   }
   /* 获取shop页面菜单列表 */
   getFoodMenu(restaurantId): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('restaurant_id', restaurantId);
     return this.http.get('/shopping/v2/menu', { params: params });
   }
 
   /* 获取商铺评价列表 */
   getRatingList(shopId: string, offset: any, tagName = ''): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('has_content', 'true')
       .set('offset', offset)
       .set('limit', '10')
@@ -163,7 +163,7 @@ export class DataService {
 
   /*  获取快速备注列表 */
   getRemark(id: string, sig: string): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('sig', sig);
     return this.http.get('/v1/carts/' + id + '/remarks', { params: params });
   }
@@ -175,7 +175,7 @@ export class DataService {
 
   /* 添加地址 */
   postAddAddress(userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag, tag_type): any {
-    let body = {
+    const body = {
       address,
       address_detail,
       geohash,
@@ -192,7 +192,7 @@ export class DataService {
 
   /* 搜索地址 */
   searchNearby(keyword: string): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('type', 'nearby')
       .set('keyword', keyword);
     return this.http.get('/v1/pois', { params: params });
@@ -200,13 +200,13 @@ export class DataService {
 
   /* 确认订单 */
   checkout(geohash, entities, shopId): any {
-    let body = { 'come_from': 'web', 'geohash': geohash, 'entities': entities, 'restaurant_id': shopId };
+    const body = { 'come_from': 'web', 'geohash': geohash, 'entities': entities, 'restaurant_id': shopId };
     return this.http.post('/v1/carts/checkout', body);
   }
 
   /* 下订单 */
   placeOrders(userId, cartId, addressId, description, entities, geohash, sig): any {
-    let body = {
+    const body = {
       address_id: addressId,
       come_from: 'mobile_web',
       deliver_time: '',
@@ -221,7 +221,7 @@ export class DataService {
 
   /* 获取订单列表 */
   getOrderList(userId, offset): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('limit', '10')
       .set('offset', offset);
     return this.http.get('/bos/v2/users/' + userId + '/orders', { params: params });
@@ -232,7 +232,7 @@ export class DataService {
   }
 
   getUserInfo(userId: string): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('user_id', userId);
     return this.http.get('/v1/user', { params: params });
   }
@@ -242,7 +242,7 @@ export class DataService {
  */
 
   getPayRequest(merchantOrderNo, userId): any {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('merchantId', '5')
       .set('merchantOrderNo', merchantOrderNo)
       .set('source', 'MOBILE_WAP')

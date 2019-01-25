@@ -46,7 +46,7 @@ export class AddAddressPage extends UserInfo {
   }
 
   async toastTip(message: string) {
-    let toast = await this.toastCtrl.create({
+    const toast = await this.toastCtrl.create({
         message: message,
         duration: 2000,
         position: 'bottom'

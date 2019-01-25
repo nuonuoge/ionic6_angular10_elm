@@ -35,7 +35,7 @@ export class SearchPage implements OnInit {
   }
 
   setSearchStorage() {
-    let history = this.storageService.getStore('searchHistory');
+    const history = this.storageService.getStore('searchHistory');
     if (history) {
       let checkrepeat = false;
       this.searchHistory = JSON.parse(history);

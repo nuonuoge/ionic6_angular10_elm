@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
   }
 
   async toastTip(message: string) {
-    let toast = await this.toastCtrl.create({
+    const toast = await this.toastCtrl.create({
         message: message,
         duration: 2000,
         position: 'middle'

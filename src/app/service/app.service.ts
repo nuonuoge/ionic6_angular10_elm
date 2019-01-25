@@ -13,7 +13,7 @@ export class AppService {
   public orderDetail: any;
 
   getTabPagesIndex(pageName) {
-    let tabPagesIndex: any = {'MsitePage': 0, 'SearchPage': 1, 'OrderPage': 2, 'ProfilePage': 3};
+    const tabPagesIndex: any = {'MsitePage': 0, 'SearchPage': 1, 'OrderPage': 2, 'ProfilePage': 3};
     return tabPagesIndex[pageName];
   }
 }

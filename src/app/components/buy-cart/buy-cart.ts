@@ -22,11 +22,11 @@ export class BuyCartComponent {
   }
   // shopCart变化的时候重新计算当前商品的数量
   foodNum() {
-    let category_id = this.foods.category_id;
-    let item_id = this.foods.item_id;
+    const category_id = this.foods.category_id;
+    const item_id = this.foods.item_id;
     if (this.shopCart() && this.shopCart()[category_id] && this.shopCart()[category_id][item_id]) {
       let num = 0;
-      let values = [];
+      const values = [];
       Object.keys(this.shopCart()[category_id][item_id]).forEach(item => {
         values.push(this.shopCart()[category_id][item_id][item]);
       });
@@ -49,8 +49,8 @@ export class BuyCartComponent {
   addToCart(category_id, item_id, food_id, name, price, specs, packing_fee, sku_id, stock, event) {
     this.cartService.addCart({ shopid: this.shopId, category_id, item_id, food_id, name, price, specs, packing_fee, sku_id, stock });
     this.onCartChange.emit(null);
-    let elLeft = event.target.getBoundingClientRect().left;
-    let elBottom = event.target.getBoundingClientRect().bottom;
+    const elLeft = event.target.getBoundingClientRect().left;
+    const elBottom = event.target.getBoundingClientRect().bottom;
     this.showMoveDot.push(true);
     this.onShowMoveDot.emit({ 'showMoveDot': this.showMoveDot, 'elLeft': elLeft, 'elBottom': elBottom });
 
@@ -61,7 +61,7 @@ export class BuyCartComponent {
   }
   // 点击多规格商品的减按钮，弹出提示
   async showReduceTip() {
-    let toast = await this.toastCtrl.create({
+    const toast = await this.toastCtrl.create({
       message: '多规格商品只能去购物车删除哦',
       duration: 2000,
       position: 'middle',

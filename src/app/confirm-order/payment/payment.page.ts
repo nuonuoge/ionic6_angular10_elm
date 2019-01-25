@@ -34,7 +34,7 @@ export class PaymentPage implements OnInit {
   }
 
   async presentConfirm(message: string) {
-    let alert = await this.alertCtrl.create({
+    const alert = await this.alertCtrl.create({
       header: '确认支付',
       message: message,
       cssClass: 'confirm',
@@ -42,7 +42,7 @@ export class PaymentPage implements OnInit {
         {
           text: '确认',
           handler: () => {
-            this.router.navigateByUrl('/app/tab/(order:order)');
+            this.router.navigateByUrl('/tabs/order');
           }
         }
       ]

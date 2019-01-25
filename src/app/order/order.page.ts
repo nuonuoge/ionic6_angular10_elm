@@ -45,7 +45,7 @@ export class OrderPage extends UserInfo implements OnInit, OnDestroy {
     this.offset += 10;
     this.preventRepeatReuqest = true;
     this.showLoading = true;
-    let userId = this.localStorageService.getStore('userId');
+    const userId = this.localStorageService.getStore('userId');
     this.dataService.getOrderList(userId, this.offset).subscribe(res => {
       if (res.length < 10) {
         this.touchEnd = true;
@@ -65,7 +65,7 @@ export class OrderPage extends UserInfo implements OnInit, OnDestroy {
   }
 
   async presentConfirm(message: string) {
-    let alert = await this.alertCtrl.create({
+    const alert = await this.alertCtrl.create({
       header: '确认支付',
       message: message,
       cssClass: 'confirm',
@@ -73,7 +73,7 @@ export class OrderPage extends UserInfo implements OnInit, OnDestroy {
         {
           text: '确认',
           handler: () => {
-            this.router.navigateByUrl('/app/tab/(order:order)');
+            this.router.navigateByUrl('/tabs/order');
           }
         }
       ]

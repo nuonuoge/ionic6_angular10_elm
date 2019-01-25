@@ -22,10 +22,10 @@ export class CartService {
     sku_id?: string,
     stock?: any
   }) {
-    let cart = this.cartList;
-    let shop = cart[cartObject.shopid] = (cart[cartObject.shopid] || {});
-    let category = shop[cartObject.category_id] = (shop[cartObject.category_id] || {});
-    let item = category[cartObject.item_id] = (category[cartObject.item_id] || {});
+    const cart = this.cartList;
+    const shop = cart[cartObject.shopid] = (cart[cartObject.shopid] || {});
+    const category = shop[cartObject.category_id] = (shop[cartObject.category_id] || {});
+    const item = category[cartObject.item_id] = (category[cartObject.item_id] || {});
     if (item[cartObject.food_id]) {
       item[cartObject.food_id]['num']++;
     } else {
@@ -57,10 +57,10 @@ export class CartService {
     sku_id?: string,
     stock?: any
   }) {
-    let cart = this.cartList;
-    let shop = (cart[cartObject.shopid] || {});
-    let category = (shop[cartObject.category_id] || {});
-    let item = (category[cartObject.item_id] || {});
+    const cart = this.cartList;
+    const shop = (cart[cartObject.shopid] || {});
+    const category = (shop[cartObject.category_id] || {});
+    const item = (category[cartObject.item_id] || {});
     if (item && item[cartObject.food_id]) {
       if (item[cartObject.food_id]['num'] > 0) {
         item[cartObject.food_id]['num']--;
@@ -75,7 +75,7 @@ export class CartService {
   }
   // 网页初始化时从本地缓存获取购物车数据
   initBuyCart() {
-    let initCart = this.storageService.getStore('buyCart');
+    const initCart = this.storageService.getStore('buyCart');
     if (initCart) {
       this.cartList = JSON.parse(initCart);
     }

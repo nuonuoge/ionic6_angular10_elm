@@ -9,7 +9,7 @@
   <nav class="msite_nav">
     <div class="swiper-container" *ngIf="foodTypes?.length">
       <div class="food_types_container">
-        <ion-slides (ionSlideDidChange)="slideChanged($event)" pager="true">
+        <ion-slides pager="true">
           <ion-slide *ngFor="let foodType of foodTypes">
             <a class="link_to_food" *ngFor="let foodItem of foodType" [routerLink]="['/food']" [queryParams]="{geohash:geohash,title:foodItem.title,restaurant_category_id:getCategoryId(foodItem.link)}">
               <figure>

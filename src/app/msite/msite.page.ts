@@ -62,7 +62,7 @@ export class MsitePage implements OnInit {
   }
 
   getCategoryId(url) {
-    let urlData = decodeURIComponent(url.split('=')[1].replace('&target_name', ''));
+    const urlData = decodeURIComponent(url.split('=')[1].replace('&target_name', ''));
     if (/restaurant_category_id/gi.test(urlData)) {
       return JSON.parse(urlData).restaurant_category_id.id;
     } else {
@@ -79,7 +79,7 @@ export class MsitePage implements OnInit {
 
   getMsiteFoodTypes() {
     this.dataService.getMsiteFoodTypes(this.geohash).subscribe(res => {
-      let resArr = [...res];
+      const resArr = [...res];
       this.foodTypes = this.spliceArray(resArr, 8);
     });
   }
@@ -94,21 +94,16 @@ export class MsitePage implements OnInit {
     });
   }
   spliceArray(array: any[], spliceLength: number) {
-    let length: number = array.length;
-    let foodArr: any[] = [];
+    const length: number = array.length;
+    const foodArr: any[] = [];
     for (let i = 0, j = 0; i < length; i += spliceLength, j++) {
       foodArr[j] = array.splice(0, spliceLength);
     }
     return foodArr;
   }
 
-  slideChanged(val: any) {
-    let slideIndex = val.getActiveIndex();
-    this.slideActive = slideIndex % 2 !== 0;
-  }
-
   toSearch() {
-    this.router.navigateByUrl('/app/tab/(search:search)?geohash=' + this.geohash);
+    this.router.navigateByUrl('/tabs/search?geohash=' + this.geohash);
   }
 
   loaderMore(event: any) {
