@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { ComponentsModule } from './components';
+import { SharedModule } from './shared';
 import { CoreModule } from './core';
 import { DataService } from './service';
 
@@ -25,7 +25,7 @@ import { DataService } from './service';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    ComponentsModule,
+    SharedModule,
     CoreModule
   ],
   providers: [

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppService, LocalStorageService } from '../../service';
-import { UserInfo } from '../../class';
+import { AppService, LocalStorageService } from '../../../service';
+import { UserInfo } from '../../../class';
 
 @Component({
   selector: 'login-header',

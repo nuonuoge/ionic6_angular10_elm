@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ImgBaseUrl } from '../../../config/env';
+import { ImgBaseUrl } from '../../../../config/env';
 
 @Component({
   selector: 'shop-msite',

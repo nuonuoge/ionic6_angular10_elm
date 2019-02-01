@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import { LocalStorageService, CartService } from '../../service';
+import { LocalStorageService, CartService } from '../../../service';
 
 @Component({
   selector: 'buy-cart',

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DataService, ShopService } from '../../../service';
+import { DataService, ShopService } from '../../../../service';
 
 @Component({
   selector: 'shop-evaluate',
