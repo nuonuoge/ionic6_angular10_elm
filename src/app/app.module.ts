@@ -14,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from './shared';
 import { CoreModule } from './core';
-import { DataService } from './service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +31,6 @@ import { DataService } from './service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    DataService,
   ],
   bootstrap: [AppComponent]
 })
