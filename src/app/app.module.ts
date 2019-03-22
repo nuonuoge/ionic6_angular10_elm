@@ -10,10 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { SharedModule } from './shared';
 import { CoreModule } from './core';
+import { ConvertRequestService } from './service/convert-request.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { CoreModule } from './core';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: ConvertRequestService, multi: true },
   ],
   bootstrap: [AppComponent]
 })
