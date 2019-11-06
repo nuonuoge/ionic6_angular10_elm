@@ -238,7 +238,7 @@ export class DataService {
   }
 
   /**
- * 重新发送订单验证码
+ * 查询支付信息
  */
 
   getPayRequest(merchantOrderNo, userId): any {

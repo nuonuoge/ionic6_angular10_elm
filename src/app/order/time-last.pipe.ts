@@ -12,7 +12,7 @@ export class TimeLastPipe implements PipeTransform {
       }
     }, 1000);
   }
-  transform(value: number, exponent: string): string {
+  transform(value: number, ...args: any[]): string {
     const time = this.countNum - value;
     let minute: any = parseInt((time / 60).toString(), 10);
     let second: any = parseInt((time % 60).toString(), 10);

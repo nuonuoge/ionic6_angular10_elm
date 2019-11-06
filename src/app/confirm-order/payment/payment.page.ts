@@ -9,7 +9,8 @@ import { AppService, CartService, DataService, LocalStorageService } from '../..
   styleUrls: ['payment.page.scss']
 })
 export class PaymentPage implements OnInit {
-  payDetail: any;
+  cartPrice: any;
+  payDetail: any = {};
   showAlert: boolean = false;
   alertText: string = '';
   payWay: number = 1;

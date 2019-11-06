@@ -24,7 +24,7 @@ export class FoodPage implements OnInit {
   sortByType: string;
   foodTitle: string;
   filterNum: number;
-  deliveryMode: string;
+  deliveryMode: number;
   offset: number;
   touchend: boolean;
   showLoading: boolean;
@@ -87,7 +87,7 @@ export class FoodPage implements OnInit {
       this.restaurantCategoryId,
       this.restaurantCategoryIds,
       this.sortByType,
-      this.deliveryMode,
+      this.deliveryMode + '',
       this.supportIds).subscribe(res => {
         if (res.length < 20) {
           this.touchend = true;

@@ -66,9 +66,9 @@
                   <h3 class="food_description_head">
                     <strong class="description_foodname">{{foods.name}}</strong>
                     <ul *ngIf="foods.attributes.length" class="attributes_ul">
-                      <li *ngFor="let attribute of foods.attributes; index as foodindex" [ngStyle]="{'color': '#' + attribute.icon_color,'borderColor':'#' +attribute.icon_color}"
-                        [ngClass]="{'attribute_new': attribute.icon_name === '新'}">
-                        <p [ngStyle]="{'color': attribute.icon_name === '新'? '#fff' : '#' + attribute.icon_color}">{{attribute.icon_name === '新'? '新品':attribute.icon_name}}</p>
+                      <li *ngFor="let attribute of foods.attributes; index as foodindex" [ngStyle]="{'color': '#' + attribute?.icon_color,'borderColor':'#' +attribute?.icon_color}"
+                        [ngClass]="{'attribute_new': attribute?.icon_name === '新'}">
+                        <p [ngStyle]="{'color': attribute?.icon_name === '新'? '#fff' : '#' + attribute?.icon_color}">{{attribute?.icon_name === '新'? '新品':attribute?.icon_name}}</p>
                       </li>
                     </ul>
                   </h3>
