@@ -1,5 +1,5 @@
-# ionic4_angular7_elm
-基于ionic4 + ng7构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v4,已升级到v4正式版）
+# ionic5_angular8_elm
+基于ionic5 + ng8构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v5,已升级到v5正式版）
 
 [阿里移动端组件库ng-zorro-antd-mobile开源地址](https://github.com/NG-ZORRO/ng-zorro-antd-mobile)，将在zorro分支逐步使用zorro-antd-mobile组件替换重构，感兴趣的可以直接使用zorro分支（重构中，未完成）
 
