@@ -39,10 +39,13 @@
                 "input": "src/global.scss"
               },
               {
-                "input": "src/style/mixin.scss"
+                "input": "src/style/common.scss"
               },
               {
-                "input": "src/style/common.scss"
+                "input": "src/style/ionic.scss"
+              },
+              {
+                "input": "src/style/mixin.scss"
               }
             ],
             "scripts": []
@@ -80,7 +83,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "app:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

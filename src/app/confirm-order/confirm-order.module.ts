@@ -13,15 +13,15 @@ import { ConfirmOrderPage } from './confirm-order.page';
       },
       {
         path: 'chooseAddress',
-        loadChildren: './choose-address/choose-address.module#ChooseAddressPageModule'
+        loadChildren: () => import('./choose-address/choose-address.module').then(m => m.ChooseAddressPageModule)
       },
       {
         path: 'remark',
-        loadChildren: './remark/remark.module#RemarkPageModule'
+        loadChildren: () => import('./remark/remark.module').then(m => m.RemarkPageModule)
       },
       {
         path: 'payment',
-        loadChildren: './payment/payment.module#PaymentPageModule'
+        loadChildren: () => import('./payment/payment.module').then(m => m.PaymentPageModule)
       }
     ])
   ],

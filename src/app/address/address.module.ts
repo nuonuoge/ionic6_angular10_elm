@@ -13,11 +13,11 @@ import { AddressPage } from './address.page';
       },
       {
         path: 'add',
-        loadChildren: './add-address/add-address.module#AddAddressPageModule'
+        loadChildren: () => import('./add-address/add-address.module').then(m => m.AddAddressPageModule)
       },
       {
         path: 'search',
-        loadChildren: './search-address/search-address.module#SearchAddressPageModule'
+        loadChildren: () => import('./search-address/search-address.module').then(m => m.SearchAddressPageModule)
       }
     ])
   ],

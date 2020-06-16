@@ -12,8 +12,8 @@ import { ShopPage } from './shop.page';
         path: ':id',
         children: [
           { path: '', component: ShopPage },
-          { path: 'detail', loadChildren: './detail/shop-detail.module#ShopDetailPageModule' },
-          { path: 'evaluate', loadChildren: './evaluate/evaluate.module#ShopEvaluatePageModule' }
+          { path: 'detail', loadChildren: () => import('./detail/shop-detail.module').then(m => m.ShopDetailPageModule) },
+          { path: 'evaluate', loadChildren: () => import('./evaluate/evaluate.module').then(m => m.ShopEvaluatePageModule) }
         ]
       }
     ])

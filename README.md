@@ -1,7 +1,9 @@
-# ionic5_angular8_elm
-基于ionic5 + ng8构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v5,已升级到v5正式版）
+# ionic6_angular9_elm
+基于ionic6 + ng9构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v6,已升级到v6正式版）
 
 [阿里移动端组件库ng-zorro-antd-mobile开源地址](https://github.com/NG-ZORRO/ng-zorro-antd-mobile)，将在zorro分支逐步使用zorro-antd-mobile组件替换重构，感兴趣的可以直接使用zorro分支（重构中，未完成）
+
+基于ionic5 + ng8 构建一个具有 30+ 页面的大型单页面应用(请使用ionic5-ng8分支)
 
 基于ionic3 + ng5 构建一个具有 30+ 页面的大型单页面应用(请使用v3分支，必须使用ionic v3才能启动)
 借鉴了[@bailicangdu](https://github.com/bailicangdu/vue2-elm) vue-elm项目，已征得其本人同意，[后台传送地址](https://github.com/bailicangdu/node-elm)
@@ -24,7 +26,35 @@ npm install
 npm start
 
 ```
-#### 注意：后端域名备案失败
+#### 注意：后端域名备案失败，需要本地启动后台和管理系统，同时通过管理系统添加数据
+```
+项目运行之前，请确保系统已经安装以下应用
+1、node (6.0 及以上版本)
+2、mongodb (开启状态)
+3、GraphicsMagick (裁切图片)
+```
+```
+git clone https://github.com/bailicangdu/vue2-manage  
+
+cd vue2-manage  
+
+npm install 或 yarn(推荐)
+
+npm run dev (访问线上后台系统)
+
+npm run local (访问本地后台系统，需运行node-elm后台系统)
+
+访问: http://localhost:8002
+```
+```
+git clone https://github.com/bailicangdu/node-elm  
+
+cd node-elm
+
+npm install 或 yarn(推荐)
+
+npm run dev
+```
 建议大家下载 [后台项目地址](https://github.com/bailicangdu/node-elm)安装，本地启动，同时将proxy.config.json中的地址改为本地启动的地址http://localhost:8001
 
 ## 另外

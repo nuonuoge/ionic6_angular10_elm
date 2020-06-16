@@ -16,19 +16,19 @@ const routes: Routes = [
       },
       {
         path: 'msite',
-        loadChildren: '../msite/msite.module#MsitePageModule'
+        loadChildren: () => import('../msite/msite.module').then(m => m.MsitePageModule)
       },
       {
         path: 'search',
-        loadChildren: '../search/search.module#SearchPageModule'
+        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
       },
       {
         path: 'order',
-        loadChildren: '../order/order.module#OrderPageModule'
+        loadChildren: () => import('../order/order.module').then(m => m.OrderPageModule)
       },
       {
         path: 'profile',
-        loadChildren: '../profile/profile.module#ProfilePageModule'
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       }
     ]
   }
@@ -38,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
