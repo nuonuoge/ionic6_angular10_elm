@@ -26,36 +26,6 @@ npm install
 npm start
 
 ```
-#### 注意：后端域名备案失败，需要本地启动后台和管理系统，同时通过管理系统添加数据
-```
-项目运行之前，请确保系统已经安装以下应用
-1、node (6.0 及以上版本)
-2、mongodb (开启状态)
-3、GraphicsMagick (裁切图片)
-```
-```
-git clone https://github.com/bailicangdu/vue2-manage  
-
-cd vue2-manage  
-
-npm install 或 yarn(推荐)
-
-npm run dev (访问线上后台系统)
-
-npm run local (访问本地后台系统，需运行node-elm后台系统)
-
-访问: http://localhost:8002
-```
-```
-git clone https://github.com/bailicangdu/node-elm  
-
-cd node-elm
-
-npm install 或 yarn(推荐)
-
-npm run dev
-```
-建议大家下载 [后台项目地址](https://github.com/bailicangdu/node-elm)安装，本地启动，同时将proxy.config.json中的地址改为本地启动的地址http://localhost:8001
 
 ## 另外
 此项目有配套的后台系统，如果想体验前后台同时开发，可以下载对应的后台系统：[后台项目传送地址](https://github.com/bailicangdu/node-elm)。
