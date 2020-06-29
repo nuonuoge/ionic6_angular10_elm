@@ -1,5 +1,8 @@
 {
   "/": {
-    "target": "http://cangdu.org:8001" 
+    "target": "https://elm.cangdu.org",
+    "changeOrigin": true, 
+    "secure": false,
+    "logLevel": "debug"
   }
 }
