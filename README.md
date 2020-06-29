@@ -24,8 +24,6 @@ npm install
 npm start
 
 ```
-#### 注意：后端域名备案失败
-建议大家下载 [后台项目地址](https://github.com/bailicangdu/node-elm)安装，本地启动，同时将proxy.config.json中的地址改为本地启动的地址http://localhost:8001
 
 ## 另外
 此项目有配套的后台系统，如果想体验前后台同时开发，可以下载对应的后台系统：[后台项目传送地址](https://github.com/bailicangdu/node-elm)。
