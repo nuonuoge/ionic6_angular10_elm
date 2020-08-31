@@ -1,5 +1,7 @@
 {
   "name": "updateApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
