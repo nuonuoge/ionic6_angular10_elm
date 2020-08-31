@@ -16,7 +16,7 @@ export class ShopMsiteComponent {
       this.distance = Number(val);
     }
   }
-  get shop() {
+  get shop() { 
     return this._shop;
   }
   @Input() geohash: string;

@@ -30,6 +30,11 @@ const routes: Routes = [
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       }
+      ,
+      {
+        path: 'main',
+        loadChildren: () => import('../gang-main/gang-main.module').then(m => m.GangMainModule)
+      }
     ]
   }
 ];

@@ -16,27 +16,19 @@
           <span class="rating_num">{{shop.rating}}</span>
         </section>
         <section class="order_section">
-          月售{{shop.recent_order_num}}单
+          库存{{shop.recent_order_num}}/吨
         </section>
       </section>
       <section class="rating_order_num_right">
-        <span class="delivery_style delivery_left" *ngIf="shop.delivery_mode">{{shop.delivery_mode.text}}</span>
-        <span class="delivery_style delivery_right" *ngIf="zhunShi(shop.supports)">准时达</span>
+        <span class="delivery_style delivery_left" *ngIf="shop.delivery_mode">当月开票</span>
+        <span class="delivery_style delivery_right" *ngIf="zhunShi(shop.supports)">15号</span>
       </section>
     </h5>
     <h5 class="fee_distance">
       <p class="fee">
-        ¥{{shop.float_minimum_order_amount}}起送
-        <span class="segmentation">/</span> {{shop.piecewise_agent_fee.tips}}
+        宝钢集团
       </p>
-      <p class="distance_time">
-        <span *ngIf="distance">{{shop.distance > 1000? (shop.distance/1000).toFixed(2) + 'km': shop.distance + 'm'}}
-								<span class="segmentation">/</span>
-        </span>
-        <span *ngIf="!distance">{{shop.distance}}</span>
-        <span class="segmentation">/</span>
-        <span class="order_time">{{shop.order_lead_time}}</span>
-      </p>
+
     </h5>
   </div>
 </li>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService, DataService } from '../service';
-
+import { type } from "./data";
 
 @Component({
   selector: 'page-msite',
@@ -32,11 +32,11 @@ export class MsitePage implements OnInit {
     public router: Router,
     public appService: AppService,
     public dataService: DataService) {
-    this.geohash = this.route.snapshot.queryParamMap.get('geohash');
+    this.geohash = '31.257355,120.748803';
     this.offset = 0;
     this.shopList = [];
     this.touchend = false;
-    this.showLoading = true;
+    this.showLoading = false;
 
   }
 
@@ -59,6 +59,9 @@ export class MsitePage implements OnInit {
         this.getShopList();
       });
     }
+    // this.getPoisGeohash();
+    // this.getMsiteFoodTypes();
+    // this.getShopList();
   }
 
   getCategoryId(url) {
@@ -71,27 +74,43 @@ export class MsitePage implements OnInit {
   }
 
   getPoisGeohash() {
-    this.dataService.getPoisGeohash(this.geohash).subscribe(res => {
-      this.addressTitle = res.name;
-      this.hasGetData = true;
-    });
+    // this.dataService.getPoisGeohash(this.geohash).subscribe(res => {
+    //   this.addressTitle = res.name;
+    //   this.hasGetData = true;
+    // });
+    this.hasGetData = true;
   }
 
   getMsiteFoodTypes() {
-    this.dataService.getMsiteFoodTypes(this.geohash).subscribe(res => {
-      const resArr = [...res];
-      this.foodTypes = this.spliceArray(resArr, 8);
-    });
+    this.foodTypes = type;
+    console.log('foodTypes', this.foodTypes, JSON.stringify(this.foodTypes))
+    const type1 = ['建材', '热卷', '冷镀', '中板', '型管', '不锈钢', '中厚管', '圆钢'];
+    const type2 = ['物流', '加工', '票据', '一口价', '捡漏', '快速议价', '白条', '实时价格'];
+
+    for (let index = 0; index < this.foodTypes[0].length; index++) {
+      const element = this.foodTypes[0][index];
+      element.title = type1[index];
+    }
+    for (let index = 0; index < this.foodTypes[1].length; index++) {
+      const element = this.foodTypes[1][index];
+      element.title = type2[index];
+    }
+    // this.dataService.getMsiteFoodTypes(this.geohash).subscribe(res => {
+    //   const resArr = [...res];
+    //   this.foodTypes = this.spliceArray(resArr, 8);
+    // });
   }
   getShopList() {
-    this.dataService.getShopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId).subscribe(res => {
-      if (res.length < 20) {
-        this.touchend = true;
-      }
-      this.shopList = [...this.shopList, ...res];
-      this.showLoading = false;
-      this.preventRepeatReuqest = false;
-    });
+    // this.dataService.getShopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId).subscribe(res => {
+    //   if (res.length < 20) {
+    //     this.touchend = true;
+    //   }
+    //   this.shopList = [...this.shopList, ...res];
+    //   this.showLoading = false;
+    //   this.preventRepeatReuqest = false;
+    // });
+    this.showLoading = false;
+    this.preventRepeatReuqest = false;
   }
   spliceArray(array: any[], spliceLength: number) {
     const length: number = array.length;
@@ -115,7 +134,7 @@ export class MsitePage implements OnInit {
       return;
     }
     this.offset += 20;
-    this.showLoading = true;
+    this.showLoading = false;
     this.preventRepeatReuqest = true;
     this.getShopList();
     event.target.complete();

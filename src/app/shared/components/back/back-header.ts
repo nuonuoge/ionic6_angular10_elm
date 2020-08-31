@@ -4,7 +4,9 @@ import { Component, Input } from '@angular/core';
   selector: 'back-header',
   template: `
     <ion-toolbar color="primary">
-      <back-icon></back-icon>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
       <ion-title>{{hTitle}}</ion-title>
     </ion-toolbar>
   `,
