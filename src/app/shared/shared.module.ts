@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from './components';
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule.forRoot(),
+    NgZorroAntdMobileModule
   ],
   declarations: [
   ],
@@ -16,7 +18,8 @@ import { ComponentsModule } from './components';
     CommonModule,
     FormsModule,
     IonicModule,
-    ComponentsModule
+    ComponentsModule,
+    NgZorroAntdMobileModule
   ],
   entryComponents: [],
 })

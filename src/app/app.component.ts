@@ -23,4 +23,7 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+  onLeftClick() {
+    console.log('onLeftClick');
+  }
 }
