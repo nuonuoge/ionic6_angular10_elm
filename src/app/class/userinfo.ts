@@ -1,6 +1,7 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { Directive, OnDestroy, OnInit } from '@angular/core';
 import { AppService, LocalStorageService } from '../service';
 import { Subscription } from 'rxjs';
+@Directive()
 export class UserInfo implements OnInit, OnDestroy {
   public userId: string;
   unSubEvent: Subscription;

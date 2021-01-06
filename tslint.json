@@ -3,7 +3,6 @@
   "rules": {
     "align": {
       "options": [
-        "parameters",
         "statements"
       ]
     },
@@ -25,7 +24,6 @@
     "component-selector": [
       true,
       "element",
-      "app",
       "kebab-case"
     ],
     "eofline": true,
@@ -64,10 +62,7 @@
       "trace"
     ],
     "no-empty": false,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": false,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
@@ -116,7 +111,8 @@
       "options": [
         "ban-keywords",
         "check-format",
-        "allow-pascal-case"
+        "allow-pascal-case",
+        "allow-snake-case"
       ]
     },
     "whitespace": {

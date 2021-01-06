@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './localstorage.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
 export class CartService {
-  public cartList: Object;
+  public cartList: any;
   constructor(public storageService: LocalStorageService) {
     this.cartList = {};
   }

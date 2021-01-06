@@ -1,5 +1,5 @@
-# ionic6_angular9_elm
-基于ionic6 + ng9构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v6,已升级到v6正式版）
+# ionic6_angular10_elm
+基于ionic6 + ng10构建一个具有 30+ 页面的大型单页面应用（master必须使用ionic v6,已升级到v6正式版）
 
 [阿里移动端组件库ng-zorro-antd-mobile开源地址](https://github.com/NG-ZORRO/ng-zorro-antd-mobile)，将在zorro分支逐步使用zorro-antd-mobile组件替换重构，感兴趣的可以直接使用zorro分支（重构中，未完成）
 
